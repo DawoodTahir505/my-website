@@ -1,0 +1,176 @@
+/* Clean Dark Theme */
+:root {
+    --bg-color: #121212;
+    --text-main: #e0e0e0;
+    --text-muted: #888888;
+    --accent-color: #64ffda;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 10vh 2rem;
+}
+
+/* Header */
+header {
+    margin-bottom: 3rem;
+}
+
+.intro {
+    font-size: 3.5rem;
+    margin: 0;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.highlight {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+.divider {
+    color: #444;
+    margin: 0 10px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2rem;
+    background-color: var(--accent-color);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-top: 3rem;
+    color: #ffffff;
+}
+
+/* Skills */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.skill-tag {
+    background-color: var(--card-bg);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+}
+
+/* Projects */
+.projects-grid {
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.project-card h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+}
+
+.project-tech span {
+    background-color: #121212;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+/* Simple Contact Section */
+.contact-section {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.contact-section p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
