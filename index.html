@@ -5,63 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawood | Data Scientist</title>
     <style>
-        /* Base Reset & Variables */
+        /* Ultra-Clean Modern Reset */
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #121212;
+            --bg-color: #000000;
             --text-primary: #ffffff;
-            --text-secondary: #a3a3a3;
-            --accent: #2563eb; /* Professional Blue Accent */
-            --border-color: #262626;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+            --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-color);
             color: var(--text-primary);
-            line-height: 1.6;
+            font-family: var(--font-main);
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navigation */
+        /* Minimal Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 24px 5%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(12px);
+            padding: 30px 5vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
         }
 
-        .brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
             letter-spacing: -0.02em;
+            text-decoration: none;
+            color: var(--text-primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             transition: color 0.3s ease;
         }
 
@@ -69,183 +69,178 @@
             color: var(--text-primary);
         }
 
-        /* Container & Sections */
+        /* Layout */
         .container {
-            max-width: 1100px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 5vw;
         }
 
         section {
-            padding: 120px 0;
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        /* Hero Section */
-        #hero {
-            padding-top: 200px;
-        }
-
-        .location-tag {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            display: block;
-        }
-
+        /* Hero Typography */
         h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 20px;
         }
 
-        .hero-desc {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
+        .role {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 40px;
             font-weight: 400;
-        }
-
-        /* Skills Section */
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 48px;
             letter-spacing: -0.02em;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 24px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-        }
-
-        .skill-card h3 {
-            font-size: 1.1rem;
+        /* Section Headers */
+        h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 500;
+            letter-spacing: -0.03em;
+            margin-bottom: 60px;
+            color: var(--text-primary);
         }
 
-        /* Contact Section */
-        .contact-container {
+        /* Skills Layout */
+        .skills-list {
             display: flex;
             flex-direction: column;
-            gap: 32px;
-            max-width: 600px;
+            gap: 20px;
+            border-top: 1px solid #222;
+            padding-top: 40px;
         }
 
-        .contact-group {
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            color: var(--text-secondary);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            color: var(--text-primary);
+            transform: translateX(10px);
+        }
+
+        /* Contact Layout */
+        .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 40px;
+        }
+
+        .contact-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .contact-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            font-size: 0.85rem;
+            color: #555;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
         .contact-link {
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
             color: var(--text-primary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
             width: fit-content;
         }
 
         .contact-link:hover {
-            color: var(--accent);
+            opacity: 0.6;
         }
 
         /* Animations */
-        .fade-in {
+        .fade-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .fade-in.visible {
+        .fade-up.in-view {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Empty Footer */
+        /* Empty Footer Spacing */
         footer {
-            height: 100px;
+            height: 150px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            section { padding: 80px 0; min-height: auto; }
-            #hero { padding-top: 150px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="brand">Dawood.</a>
+        <a href="#" class="nav-logo">Dawood.</a>
         <div class="nav-links">
-            <a href="#skills">Expertise</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="container">
-        
-        <section id="hero" class="fade-in">
-            <span class="location-tag">Based in Karachi</span>
-            <h1>Data Scientist</h1>
-            <p class="hero-desc">
-                I specialize in turning raw data into actionable insights through advanced data analysis, visualization, and custom Python backend systems.
-            </p>
-        </section>
-
-        <section id="skills" class="fade-in">
-            <h2>Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><h3>Data Analysis</h3></div>
-                <div class="skill-card"><h3>Data Visualization</h3></div>
-                <div class="skill-card"><h3>Python</h3></div>
-                <div class="skill-card"><h3>Pandas & NumPy</h3></div>
-                <div class="skill-card"><h3>Matplotlib & Seaborn</h3></div>
-                <div class="skill-card"><h3>FastAPI</h3></div>
+        <section id="hero">
+            <div class="fade-up">
+                <h1>Dawood.</h1>
+                <div class="role">Data Scientist.</div>
             </div>
         </section>
 
-        <section id="contact" class="fade-in">
-            <h2>Let's Talk</h2>
-            <div class="contact-container">
-                <div class="contact-group">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:dawoodtahiir@gmail.com" class="contact-link">dawoodtahiir@gmail.com</a>
+        <section id="skills">
+            <div class="fade-up">
+                <h2>Expertise</h2>
+                <div class="skills-list">
+                    <div class="skill-item">Data Analysis <span>01</span></div>
+                    <div class="skill-item">Python <span>02</span></div>
+                    <div class="skill-item">Pandas & NumPy <span>03</span></div>
+                    <div class="skill-item">Matplotlib & Seaborn <span>04</span></div>
+                    <div class="skill-item">FastAPI <span>05</span></div>
                 </div>
-                <div class="contact-group">
-                    <span class="contact-label">Phone</span>
-                    <a href="tel:+923195999585" class="contact-link">0319-5999585</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="fade-up">
+                <h2>Let's Talk.</h2>
+                <div class="contact-info">
+                    <div class="contact-block">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:dawoodtahiir@gmail.com" class="contact-link">dawoodtahiir@gmail.com</a>
+                    </div>
+                    <div class="contact-block">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+923195999585" class="contact-link">0319-5999585</a>
+                    </div>
+                    <div class="contact-block">
+                        <span class="contact-label">Professional Profile</span>
+                        <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+                    </div>
+                    <div class="contact-block">
+                        <span class="contact-label">Code Repository</span>
+                        <a href="https://github.com/DawoodTahir505" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -255,20 +250,28 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.add('in-view');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
 
-            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-            
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Trigger hero section immediately
             setTimeout(() => {
-                const hero = document.querySelector('#hero');
-                if(hero) hero.classList.add('visible');
-            }, 100);
+                const heroFade = document.querySelector('#hero .fade-up');
+                if(heroFade) heroFade.classList.add('in-view');
+            }, 50);
         });
     </script>
 </body>
