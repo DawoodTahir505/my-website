@@ -5,196 +5,260 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawood | Data Scientist</title>
     <style>
-        /* Base Reset & Variables */
+        /* Modern CSS Reset & Variables */
         :root {
-            --bg-color: #050505;
-            --text-main: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --accent: #ffffff;
-            --card-bg: #111111;
-            --border-color: #222222;
+            --bg-dark: #030712;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-glow: rgba(56, 189, 248, 0.2);
+            --gradient-primary: linear-gradient(to right, #38bdf8, #818cf8);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-dark);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--text-main);
-            transition: color 0.3s ease;
+        /* Ambient Background Glow */
+        .ambient-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, rgba(3,7,18,0) 70%);
+            z-index: -1;
+            filter: blur(60px);
+            animation: pulse 8s infinite alternate;
         }
 
-        a:hover {
-            color: var(--text-secondary);
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
         }
 
-        /* Layout & Sections */
+        /* Layout Container */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         section {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 100px 0;
+            position: relative;
         }
 
         /* Typography */
-        h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 500;
-            letter-spacing: -0.04em;
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
             margin-bottom: 24px;
-            line-height: 1.1;
+            width: fit-content;
         }
 
-        .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            color: var(--text-secondary);
+        h1 {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        /* Gradient Text Effect */
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 650px;
             font-weight: 300;
-            max-width: 600px;
             margin-bottom: 40px;
         }
 
         h2 {
-            font-size: 2rem;
-            font-weight: 400;
+            font-size: 2.5rem;
+            font-weight: 600;
             margin-bottom: 40px;
             letter-spacing: -0.02em;
         }
 
-        /* Skills Grid */
-        .skills-container {
+        /* Modern Grid Layouts */
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 16px;
         }
 
-        .skill-tag {
-            padding: 10px 20px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--text-main);
+        .skill-item {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 500;
             color: var(--text-main);
-            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Contact Section */
-        .contact-wrapper {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px;
+        .skill-item:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.1);
         }
 
-        .contact-item {
-            margin-bottom: 24px;
+        /* Glassmorphic Contact Card */
+        .contact-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px;
             display: flex;
             flex-direction: column;
+            gap: 30px;
+            transition: border-color 0.3s ease;
         }
 
-        .contact-item:last-child {
-            margin-bottom: 0;
+        .contact-card:hover {
+            border-color: var(--border-glow);
+        }
+
+        .contact-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .contact-label {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #666;
-            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+            color: #6b7280;
+            font-weight: 600;
         }
 
-        .contact-value {
-            font-size: 1.2rem;
-            font-weight: 400;
+        .contact-link {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            width: fit-content;
         }
 
-        /* Animations */
-        .animate-on-scroll {
+        .contact-link:hover {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scroll Animations */
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .animate-on-scroll.is-visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Footer override (Empty) */
         footer {
-            height: 100px;
+            height: 100px; /* Empty footer spacing */
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .contact-wrapper {
-                padding: 30px 20px;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 30px;
+            }
+            section {
+                padding: 80px 0;
+                min-height: 70vh;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <section id="hero" class="animate-on-scroll">
-            <h1>Dawood</h1>
-            <p class="subtitle">Data Scientist specializing in Data Analysis, Visualization, and building efficient backend systems.</p>
-        </section>
+    <div class="ambient-glow"></div>
 
-        <section id="expertise" class="animate-on-scroll">
-            <h2>Expertise & Tools</h2>
-            <div class="skills-container">
-                <div class="skill-tag">Data Analysis</div>
-                <div class="skill-tag">Data Visualization</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Pandas</div>
-                <div class="skill-tag">NumPy</div>
-                <div class="skill-tag">Matplotlib</div>
-                <div class="skill-tag">Seaborn</div>
-                <div class="skill-tag">FastAPI</div>
+    <div class="container">
+        
+        <section id="hero">
+            <div class="reveal">
+                <div class="badge">📍 Based in Karachi, Pakistan</div>
+                <h1>Hi, I'm <span class="text-gradient">Dawood</span>.</h1>
+                <p class="hero-subtitle">
+                    Data Scientist specializing in Data Analysis, Visualization, and building efficient backend systems. I turn complex datasets into clear, actionable insights.
+                </p>
             </div>
         </section>
 
-        <section id="contact" class="animate-on-scroll">
-            <h2>Let's Connect</h2>
-            <div class="contact-wrapper">
-                <div class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:dawoodtahiir@gmail.com" class="contact-value">dawoodtahiir@gmail.com</a>
+        <section id="skills">
+            <div class="reveal">
+                <h2>Technical <span class="text-gradient">Arsenal</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Data Science</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Pandas</div>
+                    <div class="skill-item">NumPy</div>
+                    <div class="skill-item">Matplotlib</div>
+                    <div class="skill-item">Seaborn</div>
+                    <div class="skill-item">FastAPI</div>
                 </div>
-                <div class="contact-item">
-                    <span class="contact-label">Phone</span>
-                    <a href="tel:+923195999585" class="contact-value">0319-5999585</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" rel="noopener noreferrer" class="contact-value">linkedin.com/in/dawood-tahir</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="reveal">
+                <h2>Let's <span class="text-gradient">Connect</span></h2>
+                <div class="contact-card">
+                    <div class="contact-row">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:dawoodtahiir@gmail.com" class="contact-link">dawoodtahiir@gmail.com</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+923195999585" class="contact-link">0319-5999585</a>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/dawood-tahir-3854a035a</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -214,18 +278,19 @@
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Stop observing once visible
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
 
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(el => observer.observe(el));
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
             
-            // Trigger first section immediately to avoid delay on load
+            // Instantly reveal the first section on load
             setTimeout(() => {
-                document.getElementById('hero').classList.add('is-visible');
+                const firstReveal = document.querySelector('#hero .reveal');
+                if (firstReveal) firstReveal.classList.add('active');
             }, 100);
         });
     </script>
