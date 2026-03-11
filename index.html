@@ -198,10 +198,9 @@
         }
 
         /* ========================================= */
-        /* PRELOADER CSS ADDED HERE                  */
+        /* PRELOADER CSS                             */
         /* ========================================= */
         
-        /* Prevent scrolling while loading */
         body.loading {
             overflow: hidden;
         }
@@ -212,7 +211,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: var(--bg-color); /* Matches your dark background */
+            background-color: var(--bg-color);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -221,19 +220,20 @@
             transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 
+        /* Styled the percentage text to look modern and sharp */
         .loading-text {
-            font-size: 14px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: var(--accent); /* Matches your blue accent color */
+            font-size: 2rem;
+            font-family: monospace; /* Gives it a technical, coding look */
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--text-main);
             font-weight: bold;
         }
 
         .loading-line-container {
             width: 250px;
             height: 2px;
-            background-color: var(--border); /* Matches your border color */
+            background-color: var(--border);
             position: relative;
             overflow: hidden;
         }
@@ -243,7 +243,7 @@
             top: 0;
             left: 0;
             height: 100%;
-            background-color: var(--text-main); /* White line */
+            background-color: var(--accent); /* Changed to blue to match your theme */
             width: 0%;
             animation: fillLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
@@ -265,7 +265,7 @@
 <body class="loading">
 
     <div id="preloader">
-        <div class="loading-text">Loading Experience...</div>
+        <div class="loading-text" id="loading-percentage">0%</div>
         <div class="loading-line-container">
             <div class="loading-line"></div>
         </div>
@@ -394,6 +394,22 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
+            
+            // This handles the numbers counting up to 100%
+            let percent = 0;
+            const percentageText = document.getElementById('loading-percentage');
+            
+            // 2500ms total duration / 100 steps = 25ms per step
+            const counterInterval = setInterval(() => {
+                percent += 1;
+                percentageText.innerText = percent + '%';
+                
+                if (percent >= 100) {
+                    clearInterval(counterInterval);
+                }
+            }, 25); 
+
+            // This handles fading the screen out after 2.5 seconds
             setTimeout(() => {
                 const preloader = document.getElementById('preloader');
                 preloader.classList.add('fade-out');
