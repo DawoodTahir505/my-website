@@ -5,155 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawood | Data Scientist</title>
     <style>
-        /* Modern CSS Reset & Variables */
+        /* Base Reset & Variables */
         :root {
-            --bg-dark: #030712;
-            --bg-card: rgba(17, 24, 39, 0.7);
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --border-glow: rgba(56, 189, 248, 0.2);
-            --gradient-primary: linear-gradient(to right, #38bdf8, #818cf8);
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --accent: #2563eb; /* Professional Blue Accent */
+            --border-color: #262626;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Background Glow */
-        .ambient-glow {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60vw;
-            height: 60vh;
-            background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, rgba(3,7,18,0) 70%);
-            z-index: -1;
-            filter: blur(60px);
-            animation: pulse 8s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
-            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            min-height: 85vh;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 5%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        /* Typography */
-        .badge {
-            display: inline-flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 6px 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            width: fit-content;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        h1 {
-            font-size: clamp(3.5rem, 8vw, 6rem);
+        .brand {
+            font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-
-        /* Gradient Text Effect */
-        .text-gradient {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            color: var(--text-muted);
-            max-width: 650px;
-            font-weight: 300;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 40px;
+            color: var(--text-primary);
+            text-decoration: none;
             letter-spacing: -0.02em;
         }
 
-        /* Modern Grid Layouts */
-        .skills-grid {
+        .nav-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
+            gap: 32px;
         }
 
-        .skill-item {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--text-main);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
-        .skill-item:hover {
-            border-color: rgba(56, 189, 248, 0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.1);
+        .nav-links a:hover {
+            color: var(--text-primary);
         }
 
-        /* Glassmorphic Contact Card */
-        .contact-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 50px;
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 120px 0;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            transition: border-color 0.3s ease;
+            justify-content: center;
         }
 
-        .contact-card:hover {
-            border-color: var(--border-glow);
+        /* Hero Section */
+        #hero {
+            padding-top: 200px;
         }
 
-        .contact-row {
+        .location-tag {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        /* Skills Section */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 600px;
+        }
+
+        .contact-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -161,136 +162,112 @@
 
         .contact-label {
             font-size: 0.9rem;
+            color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #6b7280;
-            font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
         .contact-link {
-            font-size: 1.25rem;
-            color: var(--text-main);
+            font-size: 1.5rem;
+            color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
-            display: inline-block;
             width: fit-content;
         }
 
         .contact-link:hover {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent);
         }
 
-        /* Scroll Animations */
-        .reveal {
+        /* Animations */
+        .fade-in {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .reveal.active {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
+        /* Empty Footer */
         footer {
-            height: 100px; /* Empty footer spacing */
+            height: 100px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .contact-card {
-                padding: 30px;
-            }
-            section {
-                padding: 80px 0;
-                min-height: 70vh;
-            }
+            .nav-links { display: none; }
+            section { padding: 80px 0; min-height: auto; }
+            #hero { padding-top: 150px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+    <nav>
+        <a href="#" class="brand">Dawood.</a>
+        <div class="nav-links">
+            <a href="#skills">Expertise</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
     <div class="container">
         
-        <section id="hero">
-            <div class="reveal">
-                <div class="badge">📍 Based in Karachi, Pakistan</div>
-                <h1>Hi, I'm <span class="text-gradient">Dawood</span>.</h1>
-                <p class="hero-subtitle">
-                    Data Scientist specializing in Data Analysis, Visualization, and building efficient backend systems. I turn complex datasets into clear, actionable insights.
-                </p>
+        <section id="hero" class="fade-in">
+            <span class="location-tag">Based in Karachi</span>
+            <h1>Data Scientist</h1>
+            <p class="hero-desc">
+                I specialize in turning raw data into actionable insights through advanced data analysis, visualization, and custom Python backend systems.
+            </p>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><h3>Data Analysis</h3></div>
+                <div class="skill-card"><h3>Data Visualization</h3></div>
+                <div class="skill-card"><h3>Python</h3></div>
+                <div class="skill-card"><h3>Pandas & NumPy</h3></div>
+                <div class="skill-card"><h3>Matplotlib & Seaborn</h3></div>
+                <div class="skill-card"><h3>FastAPI</h3></div>
             </div>
         </section>
 
-        <section id="skills">
-            <div class="reveal">
-                <h2>Technical <span class="text-gradient">Arsenal</span></h2>
-                <div class="skills-grid">
-                    <div class="skill-item">Data Science</div>
-                    <div class="skill-item">Data Analysis</div>
-                    <div class="skill-item">Data Visualization</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">Pandas</div>
-                    <div class="skill-item">NumPy</div>
-                    <div class="skill-item">Matplotlib</div>
-                    <div class="skill-item">Seaborn</div>
-                    <div class="skill-item">FastAPI</div>
+        <section id="contact" class="fade-in">
+            <h2>Let's Talk</h2>
+            <div class="contact-container">
+                <div class="contact-group">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:dawoodtahiir@gmail.com" class="contact-link">dawoodtahiir@gmail.com</a>
+                </div>
+                <div class="contact-group">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+923195999585" class="contact-link">0319-5999585</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="reveal">
-                <h2>Let's <span class="text-gradient">Connect</span></h2>
-                <div class="contact-card">
-                    <div class="contact-row">
-                        <span class="contact-label">Email</span>
-                        <a href="mailto:dawoodtahiir@gmail.com" class="contact-link">dawoodtahiir@gmail.com</a>
-                    </div>
-                    <div class="contact-row">
-                        <span class="contact-label">Phone</span>
-                        <a href="tel:+923195999585" class="contact-link">0319-5999585</a>
-                    </div>
-                    <div class="contact-row">
-                        <span class="contact-label">LinkedIn</span>
-                        <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/dawood-tahir-3854a035a</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            </footer>
+        <footer></footer>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); 
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1 });
 
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
             
-            // Instantly reveal the first section on load
             setTimeout(() => {
-                const firstReveal = document.querySelector('#hero .reveal');
-                if (firstReveal) firstReveal.classList.add('active');
+                const hero = document.querySelector('#hero');
+                if(hero) hero.classList.add('visible');
             }, 100);
         });
     </script>
