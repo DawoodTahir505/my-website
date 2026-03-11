@@ -3,113 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood | Data Scientist</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Dawood | Portfolio</title>
+    <style>
+        /* CSS Reset & Base */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            cursor: none; /* Hides default cursor for the custom dot */
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #eaeaea;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, background-color 0.15s ease-out;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 24px;
+        }
+
+        /* Typography */
+        h1 { 
+            font-size: 4rem; 
+            font-weight: 300; 
+            letter-spacing: -1.5px; 
+            margin-bottom: 8px; 
+        }
+        
+        h2 { 
+            font-size: 1.25rem; 
+            font-weight: 400; 
+            color: #777; 
+            margin-bottom: 60px; 
+        }
+        
+        /* Section Styling */
+        section { 
+            margin-bottom: 80px; 
+        }
+        
+        .section-label { 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: #444; 
+            margin-bottom: 24px; 
+        }
+        
+        .philosophy-text { 
+            font-size: 1.75rem; 
+            font-weight: 300; 
+            line-height: 1.4; 
+            color: #ccc; 
+        }
+
+        /* Contact Links */
+        .contact-list { 
+            list-style: none; 
+        }
+        
+        .contact-list li { 
+            margin-bottom: 16px; 
+            font-size: 1.1rem; 
+            color: #aaa;
+        }
+        
+        a { 
+            color: #eaeaea; 
+            text-decoration: none; 
+            position: relative; 
+            transition: color 0.3s ease; 
+        }
+        
+        a:hover { 
+            color: #777; 
+        }
+        
+        /* Minimal Footer with no copyright text */
+        footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 3rem; }
+            .philosophy-text { font-size: 1.4rem; }
+            .container { padding: 80px 20px; }
+            * { cursor: auto; } /* Disable custom cursor on mobile */
+            .cursor-dot { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">DAWOOD.</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="cursor-dot" id="cursor"></div>
 
-    <section id="home" class="hero">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <p class="subtitle">Open to new projects</p>
-            <h1>Hi, I'm Dawood.</h1>
-            <h2 class="role">Data Scientist & Python Developer</h2>
-            <p class="description">
-                I specialize in data analysis, visualization, and building robust APIs. I bridge the gap between complex data and actionable insights.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                <a href="#skills" class="btn secondary-btn">View Skills</a>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <header>
+            <h1>Dawood</h1>
+            <h2>Data Science & Development</h2>
+        </header>
 
-    <section id="about" class="about">
-        <div class="section-title" data-aos="fade-right">
-            <span>Who I Am</span>
-            <h2>About Me.</h2>
-        </div>
-        <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-            <p>
-                I am a Data Scientist based in Karachi, Pakistan, specializing in data analysis and visualization. I hold strong expertise in turning raw, complex data into meaningful stories and decisions.
-            </p>
-            <p>
-                Beyond standard data manipulation, I build scalable backend systems using modern Python frameworks to bring data models into production. My approach is simple: clean code, clear visuals, and real-world impact.
-            </p>
-        </div>
-    </section>
+        <section>
+            <div class="section-label">Philosophy</div>
+            <p class="philosophy-text">"Data should be clear, not complex or unprofessional."</p>
+        </section>
 
-    <section id="skills" class="skills">
-        <div class="section-title" data-aos="fade-right">
-            <span>Technical Stack</span>
-            <h2>Tools & Expertise.</h2>
-        </div>
+        <section>
+            <div class="section-label">Contact</div>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:dawoodtahiir@gmail.com">dawoodtahiir@gmail.com</a></li>
+                <li>Phone: ahmed aza 03195999585</li>
+                <li>GitHub: <a href="https://github.com/DawoodTahir505" target="_blank" rel="noopener noreferrer">DawoodTahir505</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" rel="noopener noreferrer">Dawood Tahir</a></li>
+            </ul>
+        </section>
         
-        <div class="skills-grid">
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-            </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-solid fa-chart-pie"></i>
-                <h3>Data Analysis</h3>
-            </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fa-solid fa-chart-column"></i>
-                <h3>Data Visualization</h3>
-            </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fa-solid fa-table"></i>
-                <h3>Pandas & NumPy</h3>
-            </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Matplotlib & Seaborn</h3>
-            </div>
-            <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
-                <i class="fa-solid fa-server"></i>
-                <h3>FastAPI</h3>
-            </div>
-        </div>
-    </section>
+        <footer>
+            </footer>
+    </div>
 
-    <section id="contact" class="contact">
-        <div class="section-title" data-aos="fade-right">
-            <span>Get In Touch</span>
-            <h2>Let's Connect.</h2>
-        </div>
-        <div class="contact-container" data-aos="fade-up">
-            <div class="contact-card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Email Me</h3>
-                <a href="mailto:dawoodtahiir@gmail.com">dawoodtahiir@gmail.com</a>
-            </div>
-            <div class="contact-card">
-                <i class="fa-brands fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank">linkedin.com/in/dawood-tahir</a>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        
+        // Update cursor position
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-    <footer>
-        <p>© 2026 Dawood. All rights reserved.</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+        // Grow cursor when hovering over links
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
+                cursor.style.backgroundColor = '#777';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.backgroundColor = '#fff';
+            });
+        });
+    </script>
 </body>
 </html>
