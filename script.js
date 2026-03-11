@@ -1,41 +1,9 @@
-// Words to type out
-const titles = ["Python.", "Data Cleaning.", "Machine Learning.", "Problem Solving."];
-const typingSpeed = 100; 
-const erasingSpeed = 50; 
-const delayBetweenTitles = 2000; 
-
-let titleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    const textElement = document.getElementById("typing-text");
-    const currentTitle = titles[titleIndex];
-
-    if (isDeleting) {
-        textElement.textContent = currentTitle.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        textElement.textContent = currentTitle.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeDelay = isDeleting ? erasingSpeed : typingSpeed;
-
-    if (!isDeleting && charIndex === currentTitle.length) {
-        typeDelay = delayBetweenTitles;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        titleIndex++;
-        if (titleIndex >= titles.length) {
-            titleIndex = 0;
-        }
-    }
-
-    setTimeout(typeEffect, typeDelay);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(typeEffect, 500); 
+// Initialize the AOS animation library
+document.addEventListener("DOMContentLoaded", function() {
+    AOS.init({
+        once: true, // whether animation should happen only once - while scrolling down
+        offset: 100, // offset (in px) from the original trigger point
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease-in-out', // default easing for AOS animations
+    });
 });
