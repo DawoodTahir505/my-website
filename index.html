@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood| Data Scientist</title>
+    <title>Dawood | Data Scientist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -196,9 +196,80 @@
             h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
         }
+
+        /* ========================================= */
+        /* PRELOADER CSS ADDED HERE                  */
+        /* ========================================= */
+        
+        /* Prevent scrolling while loading */
+        body.loading {
+            overflow: hidden;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-color); /* Matches your dark background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loading-text {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--accent); /* Matches your blue accent color */
+            font-weight: bold;
+        }
+
+        .loading-line-container {
+            width: 250px;
+            height: 2px;
+            background-color: var(--border); /* Matches your border color */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: var(--text-main); /* White line */
+            width: 0%;
+            animation: fillLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes fillLine {
+            0% { width: 0%; }
+            40% { width: 40%; }
+            80% { width: 80%; }
+            100% { width: 100%; }
+        }
+
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
 </head>
-<body>
+
+<body class="loading">
+
+    <div id="preloader">
+        <div class="loading-text">Loading Experience...</div>
+        <div class="loading-line-container">
+            <div class="loading-line"></div>
+        </div>
+    </div>
 
     <nav>
         <div class="logo">Dawood</div>
@@ -321,6 +392,18 @@
         </div>
     </section>
 
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.classList.add('fade-out');
+                document.body.classList.remove('loading');
+                
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 800); 
+            }, 2500); 
+        });
+    </script>
 </body>
 </html>
-
