@@ -75,6 +75,38 @@
             margin: 0 auto;
         }
 
+        /* --- NEW HERO LAYOUT STYLES --- */
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text-side {
+            flex: 1; 
+        }
+
+        .hero-image-side {
+            flex: 1; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-side img {
+            max-width: 350px; 
+            width: 100%;
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); 
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-image-side img:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3); 
+        }
+        /* --- END NEW HERO LAYOUT STYLES --- */
+
         .hero-subtitle {
             color: var(--accent);
             text-transform: uppercase;
@@ -195,6 +227,21 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
+            
+            /* UPDATED MOBILE LAYOUT FOR HERO */
+            .hero-wrapper {
+                flex-direction: column-reverse; 
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .hero-desc {
+                margin: 0 auto 2rem auto; 
+            }
+            
+            .hero-image-side img {
+                max-width: 250px; 
+            }
         }
 
         /* ========================================= */
@@ -220,10 +267,9 @@
             transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 
-        /* Styled the percentage text to look modern and sharp */
         .loading-text {
             font-size: 2rem;
-            font-family: monospace; /* Gives it a technical, coding look */
+            font-family: monospace; 
             letter-spacing: 2px;
             margin-bottom: 15px;
             color: var(--text-main);
@@ -243,7 +289,7 @@
             top: 0;
             left: 0;
             height: 100%;
-            background-color: var(--accent); /* Changed to blue to match your theme */
+            background-color: var(--accent); 
             width: 0%;
             animation: fillLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
@@ -282,14 +328,24 @@
     </nav>
 
     <header id="home">
-        <div class="hero-subtitle">Open to new projects · 2026</div>
-        <h1>Hi, I'm Dawood<br>Data Scientist.</h1>
-        <p class="hero-desc">
-            Transforming raw data into actionable insights. I specialize in exploratory data analysis, visualization, and building robust APIs for machine learning solutions.
-        </p>
-        <div>
-            <a href="#projects" class="btn">View Work</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <div class="hero-wrapper">
+            
+            <div class="hero-text-side">
+                <div class="hero-subtitle">Open to new projects · 2026</div>
+                <h1>Hi, I'm Dawood<br>Data Scientist.</h1>
+                <p class="hero-desc">
+                    Transforming raw data into actionable insights. I specialize in exploratory data analysis, visualization, and building robust APIs for machine learning solutions.
+                </p>
+                <div>
+                    <a href="#projects" class="btn">View Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-side">
+                <img src="IMG_20260324_173959.jpg" alt="Dawood">
+            </div>
+            
         </div>
     </header>
 
