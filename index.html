@@ -28,6 +28,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden; /* Prevents horizontal scroll during animations */
         }
 
         a {
@@ -151,15 +152,40 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            perspective: 1000px; /* Helps with the 3D depth effect */
         }
 
         .about-image img {
             width: 100%;
-            max-width: 320px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 280px; /* Slightly shorter/smaller */
+            aspect-ratio: 4/5; /* Gives it a clean portrait proportion */
+            border-radius: 18px; /* 3D rounded corners */
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            
+            /* 3D Box Shadow styling */
+            box-shadow: 
+                15px 15px 35px rgba(0, 0, 0, 0.8),
+                -5px -5px 15px rgba(255, 255, 255, 0.05);
             object-fit: cover;
+            
+            /* Animation starting state */
+            opacity: 0;
+            transform: translateX(-150px);
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out, box-shadow 0.3s ease;
+        }
+
+        /* Class added by Javascript when scrolling into view */
+        .about-image img.scrolled-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* 3D Hover effect */
+        .about-image img.scrolled-in:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                20px 20px 45px rgba(0, 0, 0, 0.9),
+                -5px -5px 20px rgba(255, 255, 255, 0.08);
         }
 
         .about-content {
@@ -245,7 +271,11 @@
                 gap: 2rem;
             }
             .about-image img {
-                max-width: 250px;
+                max-width: 220px;
+                transform: translateY(50px); /* Different starting point for mobile slide-in */
+            }
+            .about-image img.scrolled-in {
+                transform: translateY(0);
             }
         }
 
@@ -342,8 +372,6 @@
     </header>
 
     <section id="about">
-        <h2 class="section-title">About Me.</h2>
-        
         <div class="about-wrapper">
             <div class="about-image">
                 <img src="https://i.postimg.cc/7Y4z2HxK/profile.jpg" alt="Dawood Tahir - Data Scientist">
@@ -473,6 +501,27 @@
                     preloader.style.display = 'none';
                 }, 800); 
             }, 2500); 
+
+            // Scroll Animation Observer for the Image
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 // Triggers when 20% of the image is in view
+            };
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scrolled-in');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            const aboutImage = document.querySelector('.about-image img');
+            if (aboutImage) {
+                imageObserver.observe(aboutImage);
+            }
         });
     </script>
 </body>
