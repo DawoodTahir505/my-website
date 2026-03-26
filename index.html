@@ -157,16 +157,19 @@
 
         .about-image img {
             width: 100%;
-            max-width: 280px; /* Slightly shorter/smaller */
-            aspect-ratio: 4/5; /* Gives it a clean portrait proportion */
-            border-radius: 18px; /* 3D rounded corners */
-            border: 2px solid rgba(255, 255, 255, 0.05);
+            max-width: 280px; 
+            aspect-ratio: 1 / 1; /* Made the aspect ratio square to crop length from the bottom */
+            border-radius: 22px; /* Smoother 3D rounded corners */
+            border: 2px solid rgba(255, 255, 255, 0.08);
             
-            /* 3D Box Shadow styling */
+            /* Enhanced 3D Box Shadow with a soft glowing light behind it */
             box-shadow: 
                 15px 15px 35px rgba(0, 0, 0, 0.8),
-                -5px -5px 15px rgba(255, 255, 255, 0.05);
+                -5px -5px 15px rgba(255, 255, 255, 0.05),
+                0 0 35px rgba(59, 130, 246, 0.25); /* Light blue accent glow */
+            
             object-fit: cover;
+            object-position: top; /* Ensures the top (your face) stays fully visible despite the crop */
             
             /* Animation starting state */
             opacity: 0;
@@ -185,7 +188,8 @@
             transform: translateY(-5px) scale(1.02);
             box-shadow: 
                 20px 20px 45px rgba(0, 0, 0, 0.9),
-                -5px -5px 20px rgba(255, 255, 255, 0.08);
+                -5px -5px 20px rgba(255, 255, 255, 0.08),
+                0 0 55px rgba(59, 130, 246, 0.4); /* Stronger glow on hover */
         }
 
         .about-content {
