@@ -145,7 +145,7 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center; /* Changed from start to center to balance the taller image */
         }
 
         .about-image {
@@ -158,7 +158,7 @@
         .about-image img {
             width: 100%;
             max-width: 280px; 
-            aspect-ratio: 2 / 3; /* Increased length to extend down to the suit button */
+            aspect-ratio: 9 / 16; /* Increased length even further down */
             border-radius: 22px; /* Smoother 3D rounded corners */
             border: 2px solid rgba(255, 255, 255, 0.08);
             
@@ -196,6 +196,18 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            
+            /* Text Animation starting state (Slide from right) */
+            opacity: 0;
+            transform: translateX(150px);
+            /* The 0.2s delay makes the text slide in right after the image starts */
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.2s, opacity 1.2s ease-out 0.2s; 
+        }
+
+        /* Class added by Javascript when scrolling into view */
+        .about-content.scrolled-in {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* Grid Layouts for Projects/Contact */
@@ -279,6 +291,14 @@
                 transform: translateY(50px); /* Different starting point for mobile slide-in */
             }
             .about-image img.scrolled-in {
+                transform: translateY(0);
+            }
+            
+            /* Change text animation to slide up on mobile to avoid horizontal scrolling issues */
+            .about-content {
+                transform: translateY(50px);
+            }
+            .about-content.scrolled-in {
                 transform: translateY(0);
             }
         }
@@ -506,14 +526,14 @@
                 }, 800); 
             }, 2500); 
 
-            // Scroll Animation Observer for the Image
+            // Scroll Animation Observer for the Image and Text
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.2 // Triggers when 20% of the image is in view
+                threshold: 0.2 // Triggers when 20% of the element is in view
             };
 
-            const imageObserver = new IntersectionObserver((entries, observer) => {
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('scrolled-in');
@@ -523,9 +543,10 @@
             }, observerOptions);
 
             const aboutImage = document.querySelector('.about-image img');
-            if (aboutImage) {
-                imageObserver.observe(aboutImage);
-            }
+            if (aboutImage) scrollObserver.observe(aboutImage);
+
+            const aboutContent = document.querySelector('.about-content');
+            if (aboutContent) scrollObserver.observe(aboutContent);
         });
     </script>
 </body>
