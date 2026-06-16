@@ -1,576 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood | Data Scientist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --text-main: #f4f4f5;
-            --text-muted: #a1a1aa;
-            --accent: #3b82f6;
-            --card-bg: #18181b;
-            --border: #27272a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #60a5fa;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            background: rgba(10, 10, 10, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        header {
-            padding: 8rem 5% 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-subtitle {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            color: #fff;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        section {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1rem;
-        }
-
-        .about-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            perspective: 1000px;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 280px; 
-            aspect-ratio: 9 / 16;
-            border-radius: 22px;
-            border: 2px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 
-                15px 15px 35px rgba(0, 0, 0, 0.8),
-                -5px -5px 15px rgba(255, 255, 255, 0.05),
-                0 0 35px rgba(59, 130, 246, 0.25);
-            object-fit: cover;
-            object-position: top;
-            opacity: 0;
-            transform: translateX(-150px);
-            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out, box-shadow 0.3s ease;
-        }
-
-        .about-image img.scrolled-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .about-image img.scrolled-in:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 
-                20px 20px 45px rgba(0, 0, 0, 0.9),
-                -5px -5px 20px rgba(255, 255, 255, 0.08),
-                0 0 55px rgba(59, 130, 246, 0.4);
-        }
-
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            opacity: 0;
-            transform: translateX(150px);
-            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.2s, opacity 1.2s ease-out 0.2s; 
-        }
-
-        .about-content.scrolled-in {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill-tag {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* Project code/demo links */
-        .project-links {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: auto;
-            padding-top: 0.5rem;
-        }
-
-        .project-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            transition: color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .project-links a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            font-size: 2.5rem;
-            color: var(--text-muted);
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icon:hover {
-            color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            
-            .about-wrapper {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .about-image img {
-                max-width: 220px;
-                transform: translateY(50px);
-            }
-            .about-image img.scrolled-in {
-                transform: translateY(0);
-            }
-            
-            .about-content {
-                transform: translateY(50px);
-            }
-            .about-content.scrolled-in {
-                transform: translateY(0);
-            }
-        }
-
-        body.loading {
-            overflow: hidden;
-        }
-
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: var(--bg-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        .loading-text {
-            font-size: 2rem;
-            font-family: monospace;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            font-weight: bold;
-        }
-
-        .loading-line-container {
-            width: 250px;
-            height: 2px;
-            background-color: var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loading-line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: var(--accent);
-            width: 0%;
-            animation: fillLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes fillLine {
-            0% { width: 0%; }
-            40% { width: 40%; }
-            80% { width: 80%; }
-            100% { width: 100%; }
-        }
-
-        .fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dawood Tahir | Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="loading">
+<nav>
+    <div class="logo">Dawood</div>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <div id="preloader">
-        <div class="loading-text" id="loading-percentage">0%</div>
-        <div class="loading-line-container">
-            <div class="loading-line"></div>
+<section class="hero" id="home">
+    <div class="hero-content" data-aos="fade-up">
+        <p class="subtitle">Open to data science roles · Remote & worldwide</p>
+        <h1>Dawood Tahir</h1>
+        <p class="role">Data Scientist</p>
+        <p class="description">I turn messy, real-world datasets into decisions — through exploratory analysis, predictive modeling, and FastAPI-backed tools that put insights in front of the people who need them.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary-btn">View work</a>
+            <!-- Upload an actual resume PDF and point this link at it -->
+            <a href="resume.pdf" class="btn secondary-btn" download>Download resume</a>
+            <a href="#contact" class="btn secondary-btn">Contact me</a>
         </div>
     </div>
+</section>
 
-    <nav>
-        <div class="logo">Dawood</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+<section class="about" id="about">
+    <div class="section-title" data-aos="fade-up">
+        <span>About</span>
+        <h2>Who I am</h2>
+    </div>
+    <div class="about-content" data-aos="fade-up">
+        <p>I'm an aspiring data scientist based in Karachi, Pakistan, focused on turning raw, messy data into stories that hold up under scrutiny — cleaning it, modeling it, and visualizing what it actually means.</p>
+        <p>I bridge analysis and application: engineering features for a predictive model one day, serving those same insights through a FastAPI endpoint the next. I care about building things that get used, not just notebooks that get read once.</p>
+        <p>Right now I'm deepening my SQL and scikit-learn fundamentals, with cloud platforms (AWS) next on the list — the goal is a toolkit that travels well across teams and industries.</p>
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <div class="section-title" data-aos="fade-up">
+        <span>Skills</span>
+        <h2>Tools & expertise</h2>
+    </div>
+    <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up">
+            <i class="fa-solid fa-database"></i>
+            <h3>Languages & data</h3>
+            <p>Python, Pandas, NumPy, SQL</p>
         </div>
-    </nav>
-
-    <header id="home">
-        <div class="hero-subtitle">Open to new projects · 2026</div>
-        <h1>Hi, I'm Dawood<br>Data Scientist.</h1>
-        <p class="hero-desc">
-            Transforming raw data into actionable insights. I specialize in exploratory data analysis, visualization, and building robust APIs for machine learning solutions.
-        </p>
-        <div class="hero-cta">
-            <a href="#projects" class="btn">View Work</a>
-            <!-- Upload your actual resume PDF to the site and point this at it -->
-            <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Machine learning</h3>
+            <p>scikit-learn, feature engineering, statistics</p>
         </div>
-    </header>
-
-    <section id="about">
-        <div class="about-wrapper">
-            <div class="about-image">
-                <img src="https://i.postimg.cc/7Y4z2HxK/profile.jpg" alt="Dawood Tahir - Data Scientist">
-            </div>
-
-            <div class="about-content">
-                <p style="color: var(--text-muted); font-size: 1.1rem;">
-                    I am an aspiring Data Scientist based in Karachi, Pakistan, with a strong focus on turning raw data into meaningful stories. My passion lies in extracting actionable insights from complex datasets and visualizing trends to solve real-world challenges.
-                </p>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">
-                    Beyond just analyzing numbers, I bridge the gap between analytics and application. Whether I am engineering features for a predictive model or serving those insights through robust frameworks like FastAPI, my goal is always to build practical, impactful tools.
-                </p>
-                
-                <div class="card" style="margin-top: 1rem;">
-                    <h3>Quick Facts</h3>
-                    <ul style="color: var(--text-muted); list-style-position: inside; line-height: 2;">
-                        <li><strong>Focus:</strong> Data Science & Data Analysis</li>
-                        <li><strong>Availability:</strong> Open for opportunities</li>
-                        <li><strong>Location:</strong> Karachi, Pakistan</li>
-                        <li><strong>Currently learning:</strong> SQL & scikit-learn</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h3>Data visualization</h3>
+            <p>Matplotlib, Seaborn</p>
         </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Tools & Expertise.</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 600px;">
-            A tailored technology stack for exploratory data analysis, data visualization, and backend API development.
-        </p>
-        <div class="skills-container">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Seaborn</span>
-            <span class="skill-tag">Streamlit</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">scikit-learn</span>
-            <span class="skill-tag">Git</span>
+        <div class="skill-card" data-aos="fade-up">
+            <i class="fa-solid fa-server"></i>
+            <h3>API & deployment</h3>
+            <p>FastAPI, Streamlit</p>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Featured Projects.</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <h3>Loan Approval EDA</h3>
-                <p>Comprehensive exploratory data analysis on a financial dataset to uncover patterns in loan approvals. Cleaned missing data, performed feature engineering, and created visual insights.</p>
-                <div class="skills-container">
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Seaborn</span>
-                    <span class="skill-tag">Matplotlib</span>
-                </div>
-                <!-- Replace with your actual repo URL -->
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>AI Agent Marketplace</h3>
-                <p>Developed a functional prototype for an AI agent marketplace. Designed the user interface and connected backend processing for seamless data routing.</p>
-                <div class="skills-container">
-                    <span class="skill-tag">Streamlit</span>
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">Python</span>
-                </div>
-                <!-- Replace with your actual repo URL and deployed Streamlit link -->
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="#" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Shop Management System</h3>
-                <p>A core Python application built to streamline inventory tracking, handle point-of-sale calculations, and manage day-to-day shop operations efficiently.</p>
-                <div class="skills-container">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Data Structures</span>
-                </div>
-                <!-- Replace with your actual repo URL -->
-                <div class="project-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-code-branch"></i>
+            <h3>Workflow & tools</h3>
+            <p>Git, Jupyter</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2 class="section-title">Let's Connect.</h2>
-        <div class="grid">
-            <div>
-                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-                    I'm currently exploring new opportunities in Data Science. Whether you have a project in mind, a question about my work, or just want to connect, feel free to reach out!
-                </p>
-                <div class="social-icons">
-                    <a href="mailto:dawoodtahiir@gmail.com" class="social-icon" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" class="social-icon" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/DawoodTahir505" target="_blank" class="social-icon" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
+<section class="projects" id="projects">
+    <div class="section-title" data-aos="fade-up">
+        <span>Projects</span>
+        <h2>Featured work</h2>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            <h3>Loan approval EDA</h3>
+            <p>Analyzed 50k+ loan applications and isolated the three features behind 80% of rejections, after cleaning missing data and engineering new features.</p>
+            <div class="tag-row">
+                <span class="tag">Pandas</span>
+                <span class="tag">Seaborn</span>
+                <span class="tag">Matplotlib</span>
+            </div>
+            <!-- Replace with your real repo link -->
+            <div class="project-links">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
             </div>
         </div>
-    </section>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            
-            let percent = 0;
-            const percentageText = document.getElementById('loading-percentage');
-            
-            const counterInterval = setInterval(() => {
-                percent += 1;
-                percentageText.innerText = percent + '%';
-                
-                if (percent >= 100) {
-                    clearInterval(counterInterval);
-                }
-            }, 25); 
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>AI agent marketplace</h3>
+            <p>Built and deployed a Streamlit + FastAPI prototype routing requests across multiple agent types, with the UI and backend designed together from scratch.</p>
+            <div class="tag-row">
+                <span class="tag">Streamlit</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Python</span>
+            </div>
+            <!-- Replace with your real repo + live demo links -->
+            <div class="project-links">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
+            </div>
+        </div>
 
-            setTimeout(() => {
-                const preloader = document.getElementById('preloader');
-                preloader.classList.add('fade-out');
-                document.body.classList.remove('loading');
-                
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 800); 
-            }, 2500); 
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Shop management system</h3>
+            <p>Python application replacing manual stock counts with live inventory tracking and point-of-sale calculations for day-to-day shop operations.</p>
+            <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Data structures</span>
+            </div>
+            <!-- Replace with your real repo link -->
+            <div class="project-links">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2
-            };
+<section class="contact" id="contact">
+    <div class="section-title" data-aos="fade-up">
+        <span>Contact</span>
+        <h2>Let's connect</h2>
+    </div>
+    <div class="contact-container">
+        <div class="contact-card" data-aos="fade-up">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <a href="mailto:dawoodtahiir@gmail.com">dawoodtahiir@gmail.com</a>
+        </div>
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-brands fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank">Connect with me</a>
+        </div>
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub</h3>
+            <a href="https://github.com/DawoodTahir505" target="_blank">View my repos</a>
+        </div>
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <h3>Resume</h3>
+            <a href="resume.pdf" download>Download PDF</a>
+        </div>
+    </div>
+</section>
 
-            const scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('scrolled-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+<footer>
+    <p>&copy; 2026 Dawood Tahir. Built from scratch, one dataset at a time.</p>
+</footer>
 
-            const aboutImage = document.querySelector('.about-image img');
-            if (aboutImage) scrollObserver.observe(aboutImage);
-
-            const aboutContent = document.querySelector('.about-content');
-            if (aboutContent) scrollObserver.observe(aboutContent);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-in-out'
         });
-    </script>
+    });
+</script>
 </body>
 </html>
