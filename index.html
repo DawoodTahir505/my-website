@@ -28,7 +28,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden; /* Prevents horizontal scroll during animations */
+            overflow-x: hidden;
         }
 
         a {
@@ -41,7 +41,6 @@
             color: #60a5fa;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -71,7 +70,6 @@
             font-weight: 500;
         }
 
-        /* Header / Hero Section */
         header {
             padding: 8rem 5% 4rem;
             max-width: 1200px;
@@ -99,6 +97,12 @@
             margin-bottom: 2rem;
         }
 
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -106,7 +110,6 @@
             padding: 0.8rem 2rem;
             border-radius: 5px;
             font-weight: bold;
-            margin-right: 1rem;
             transition: transform 0.3s ease, background 0.3s ease;
         }
 
@@ -126,7 +129,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Sections */
         section {
             padding: 5rem 5%;
             max-width: 1200px;
@@ -140,77 +142,64 @@
             padding-bottom: 1rem;
         }
 
-        /* About Section Layout with Image */
         .about-wrapper {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
-            align-items: center; /* Changed from start to center to balance the taller image */
+            align-items: center;
         }
 
         .about-image {
             width: 100%;
             display: flex;
             justify-content: center;
-            perspective: 1000px; /* Helps with the 3D depth effect */
+            perspective: 1000px;
         }
 
         .about-image img {
             width: 100%;
             max-width: 280px; 
-            aspect-ratio: 9 / 16; /* Increased length even further down */
-            border-radius: 22px; /* Smoother 3D rounded corners */
+            aspect-ratio: 9 / 16;
+            border-radius: 22px;
             border: 2px solid rgba(255, 255, 255, 0.08);
-            
-            /* Enhanced 3D Box Shadow with a soft glowing light behind it */
             box-shadow: 
                 15px 15px 35px rgba(0, 0, 0, 0.8),
                 -5px -5px 15px rgba(255, 255, 255, 0.05),
-                0 0 35px rgba(59, 130, 246, 0.25); /* Light blue accent glow */
-            
+                0 0 35px rgba(59, 130, 246, 0.25);
             object-fit: cover;
-            object-position: top; /* Ensures the top (your face) stays fully visible */
-            
-            /* Animation starting state */
+            object-position: top;
             opacity: 0;
             transform: translateX(-150px);
             transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out, box-shadow 0.3s ease;
         }
 
-        /* Class added by Javascript when scrolling into view */
         .about-image img.scrolled-in {
             opacity: 1;
             transform: translateX(0);
         }
 
-        /* 3D Hover effect */
         .about-image img.scrolled-in:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 
                 20px 20px 45px rgba(0, 0, 0, 0.9),
                 -5px -5px 20px rgba(255, 255, 255, 0.08),
-                0 0 55px rgba(59, 130, 246, 0.4); /* Stronger glow on hover */
+                0 0 55px rgba(59, 130, 246, 0.4);
         }
 
         .about-content {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            
-            /* Text Animation starting state (Slide from right) */
             opacity: 0;
             transform: translateX(150px);
-            /* The 0.2s delay makes the text slide in right after the image starts */
             transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.2s, opacity 1.2s ease-out 0.2s; 
         }
 
-        /* Class added by Javascript when scrolling into view */
         .about-content.scrolled-in {
             opacity: 1;
             transform: translateX(0);
         }
 
-        /* Grid Layouts for Projects/Contact */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -223,6 +212,8 @@
             border-radius: 10px;
             border: 1px solid var(--border);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -240,7 +231,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Skills Tags */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -258,7 +248,31 @@
             border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
-        /* Social Icons */
+        /* Project code/demo links */
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
         .social-icons {
             display: flex;
             gap: 2rem;
@@ -276,25 +290,22 @@
             transform: translateY(-5px);
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
             
-            /* Stacks the image on top of the text on phones */
             .about-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             .about-image img {
                 max-width: 220px;
-                transform: translateY(50px); /* Different starting point for mobile slide-in */
+                transform: translateY(50px);
             }
             .about-image img.scrolled-in {
                 transform: translateY(0);
             }
             
-            /* Change text animation to slide up on mobile to avoid horizontal scrolling issues */
             .about-content {
                 transform: translateY(50px);
             }
@@ -303,7 +314,6 @@
             }
         }
 
-        /* PRELOADER CSS */
         body.loading {
             overflow: hidden;
         }
@@ -389,8 +399,10 @@
         <p class="hero-desc">
             Transforming raw data into actionable insights. I specialize in exploratory data analysis, visualization, and building robust APIs for machine learning solutions.
         </p>
-        <div>
+        <div class="hero-cta">
             <a href="#projects" class="btn">View Work</a>
+            <!-- Upload your actual resume PDF to the site and point this at it -->
+            <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
     </header>
@@ -414,6 +426,8 @@
                     <ul style="color: var(--text-muted); list-style-position: inside; line-height: 2;">
                         <li><strong>Focus:</strong> Data Science & Data Analysis</li>
                         <li><strong>Availability:</strong> Open for opportunities</li>
+                        <li><strong>Location:</strong> Karachi, Pakistan</li>
+                        <li><strong>Currently learning:</strong> SQL & scikit-learn</li>
                     </ul>
                 </div>
             </div>
@@ -434,6 +448,9 @@
             <span class="skill-tag">Matplotlib</span>
             <span class="skill-tag">Seaborn</span>
             <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">Git</span>
         </div>
     </section>
 
@@ -444,29 +461,42 @@
             <div class="card">
                 <h3>Loan Approval EDA</h3>
                 <p>Comprehensive exploratory data analysis on a financial dataset to uncover patterns in loan approvals. Cleaned missing data, performed feature engineering, and created visual insights.</p>
-                <div class="skills-container" style="margin-top: auto;">
+                <div class="skills-container">
                     <span class="skill-tag">Pandas</span>
                     <span class="skill-tag">Seaborn</span>
                     <span class="skill-tag">Matplotlib</span>
+                </div>
+                <!-- Replace with your actual repo URL -->
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
 
             <div class="card">
                 <h3>AI Agent Marketplace</h3>
                 <p>Developed a functional prototype for an AI agent marketplace. Designed the user interface and connected backend processing for seamless data routing.</p>
-                <div class="skills-container" style="margin-top: auto;">
+                <div class="skills-container">
                     <span class="skill-tag">Streamlit</span>
                     <span class="skill-tag">FastAPI</span>
                     <span class="skill-tag">Python</span>
+                </div>
+                <!-- Replace with your actual repo URL and deployed Streamlit link -->
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Shop Management System</h3>
                 <p>A core Python application built to streamline inventory tracking, handle point-of-sale calculations, and manage day-to-day shop operations efficiently.</p>
-                <div class="skills-container" style="margin-top: auto;">
+                <div class="skills-container">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">Data Structures</span>
+                </div>
+                <!-- Replace with your actual repo URL -->
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
 
@@ -484,9 +514,6 @@
                     <a href="mailto:dawoodtahiir@gmail.com" class="social-icon" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="tel:03195999585" class="social-icon" title="Phone">
-                        <i class="fas fa-phone"></i>
-                    </a>
                     <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank" class="social-icon" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
@@ -501,11 +528,9 @@
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             
-            // This handles the numbers counting up to 100%
             let percent = 0;
             const percentageText = document.getElementById('loading-percentage');
             
-            // 2500ms total duration / 100 steps = 25ms per step
             const counterInterval = setInterval(() => {
                 percent += 1;
                 percentageText.innerText = percent + '%';
@@ -515,7 +540,6 @@
                 }
             }, 25); 
 
-            // This handles fading the screen out after 2.5 seconds
             setTimeout(() => {
                 const preloader = document.getElementById('preloader');
                 preloader.classList.add('fade-out');
@@ -526,18 +550,17 @@
                 }, 800); 
             }, 2500); 
 
-            // Scroll Animation Observer for the Image and Text
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.2 // Triggers when 20% of the element is in view
+                threshold: 0.2
             };
 
             const scrollObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('scrolled-in');
-                        observer.unobserve(entry.target); // Stop observing once animated
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
