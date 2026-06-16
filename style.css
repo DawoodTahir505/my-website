@@ -61,6 +61,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    scroll-margin-top: 100px;
 }
 
 .section-title {
@@ -120,6 +121,7 @@ section {
 /* Buttons */
 .hero-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -164,14 +166,14 @@ section {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
 }
 
 .skill-card {
     background: #111111;
     border: 1px solid #1f2937;
-    padding: 2.5rem;
+    padding: 2.5rem 2rem;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s;
@@ -191,6 +193,82 @@ section {
 .skill-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #111111;
+    border: 1px solid #1f2937;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #3b82f6;
 }
 
 /* Contact Section */
@@ -208,6 +286,12 @@ section {
     padding: 3rem 2rem;
     border-radius: 10px;
     text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #10b981;
 }
 
 .contact-card i {
@@ -243,5 +327,5 @@ footer {
 @media (max-width: 768px) {
     .hero h1 { font-size: 3rem; }
     .role { font-size: 1.5rem; }
-    .nav-links { display: none; } /* Kept simple for mobile, can add hamburger later */
+    .nav-links { display: none; }
 }
