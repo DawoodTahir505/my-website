@@ -1,182 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dawood | Data Scientist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawood | Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<nav>
-    <div class="logo">Dawood</div>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<section class="hero" id="home">
-    <div class="hero-content" data-aos="fade-up">
-        <p class="subtitle">Open to data science roles · Remote & worldwide</p>
-        <h1>Dawood</h1>
-        <p class="role">Data Scientist</p>
-        <p class="description">I turn messy, real-world datasets into decisions — through exploratory analysis, predictive modeling, and FastAPI-backed tools that put insights in front of the people who need them.</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn primary-btn">View work</a>
-            <!-- Upload an actual resume PDF and point this link at it -->
-            <a href="resume.pdf" class="btn secondary-btn" download>Download resume</a>
-            <a href="#contact" class="btn secondary-btn">Contact me</a>
-        </div>
-    </div>
-</section>
-
-<section class="about" id="about">
-    <div class="section-title" data-aos="fade-up">
-        <span>About</span>
-        <h2>Who I am</h2>
-    </div>
-    <div class="about-content" data-aos="fade-up">
-        <p>I'm an aspiring data scientist based in Karachi, Pakistan, focused on turning raw, messy data into stories that hold up under scrutiny — cleaning it, modeling it, and visualizing what it actually means.</p>
-        <p>I bridge analysis and application: engineering features for a predictive model one day, serving those same insights through a FastAPI endpoint the next. I care about building things that get used, not just notebooks that get read once.</p>
-        <p>Right now I'm deepening my SQL and scikit-learn fundamentals, with cloud platforms (AWS) next on the list — the goal is a toolkit that travels well across teams and industries.</p>
-    </div>
-</section>
-
-<section class="skills" id="skills">
-    <div class="section-title" data-aos="fade-up">
-        <span>Skills</span>
-        <h2>Tools & expertise</h2>
-    </div>
-    <div class="skills-grid">
-        <div class="skill-card" data-aos="fade-up">
-            <i class="fa-solid fa-database"></i>
-            <h3>Languages & data</h3>
-            <p>Python, Pandas, NumPy, SQL</p>
-        </div>
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-robot"></i>
-            <h3>Machine learning</h3>
-            <p>scikit-learn, feature engineering, statistics</p>
-        </div>
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-chart-pie"></i>
-            <h3>Data visualization</h3>
-            <p>Matplotlib, Seaborn</p>
-        </div>
-        <div class="skill-card" data-aos="fade-up">
-            <i class="fa-solid fa-server"></i>
-            <h3>API & deployment</h3>
-            <p>FastAPI, Streamlit</p>
-        </div>
-        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-code-branch"></i>
-            <h3>Workflow & tools</h3>
-            <p>Git, Jupyter</p>
-        </div>
-    </div>
-</section>
-
-<section class="projects" id="projects">
-    <div class="section-title" data-aos="fade-up">
-        <span>Projects</span>
-        <h2>Featured work</h2>
-    </div>
-    <div class="projects-grid">
-        <div class="project-card" data-aos="fade-up">
-            <h3>Loan approval EDA</h3>
-            <p>Analyzed 50k+ loan applications and isolated the three features behind 80% of rejections, after cleaning missing data and engineering new features.</p>
-            <div class="tag-row">
-                <span class="tag">Pandas</span>
-                <span class="tag">Seaborn</span>
-                <span class="tag">Matplotlib</span>
-            </div>
-            <!-- Replace with your real repo link -->
-            <div class="project-links">
-                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+    <header class="hero">
+        <div class="container">
+            <h1 class="fade-in">Hi, I'm <span class="highlight">Dawood</span>.</h1>
+            <p class="subtitle">I clean messy data, build predictive models, and deploy interactive AI systems.</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="resume.pdf" download class="btn btn-primary"><i class="fas fa-file-download"></i> Download CV</a>
             </div>
         </div>
+    </header>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>AI agent marketplace</h3>
-            <p>Built and deployed a Streamlit + FastAPI prototype routing requests across multiple agent types, with the UI and backend designed together from scratch.</p>
-            <div class="tag-row">
-                <span class="tag">Streamlit</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Python</span>
-            </div>
-            <!-- Replace with your real repo + live demo links -->
-            <div class="project-links">
-                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-                <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
-            </div>
-        </div>
+    <section class="portfolio-section container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Shop management system</h3>
-            <p>Python application replacing manual stock counts with live inventory tracking and point-of-sale calculations for day-to-day shop operations.</p>
-            <div class="tag-row">
-                <span class="tag">Python</span>
-                <span class="tag">Data structures</span>
-            </div>
-            <!-- Replace with your real repo link -->
-            <div class="project-links">
-                <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-            </div>
-        </div>
-    </div>
-</section>
+            <article class="project-card">
+                <div class="project-visual">
+                    <img src="gesture-tracking-demo.gif" alt="Computer Vision Real-time Tracking" class="project-img">
+                    <span class="project-badge">Computer Vision</span>
+                </div>
+                <div class="project-content">
+                    <h3>Real-Time Gesture Tracking System</h3>
+                    <p class="project-description">
+                        Built an end-to-end framework processing real-time video frames to detect hand structures using <strong>OpenCV</strong> and <strong>MediaPipe</strong>. Optimized frame processing to maintain consistent processing speeds.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>MediaPipe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary-link"><i class="fas fa-external-link-alt"></i> Launch App</a>
+                        <a href="#" class="project-link secondary-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </article>
 
-<section class="contact" id="contact">
-    <div class="section-title" data-aos="fade-up">
-        <span>Contact</span>
-        <h2>Let's connect</h2>
-    </div>
-    <div class="contact-container">
-        <div class="contact-card" data-aos="fade-up">
-            <i class="fa-solid fa-envelope"></i>
-            <h3>Email</h3>
-            <a href="mailto:dawoodtahiir@gmail.com">dawoodtahiir@gmail.com</a>
-        </div>
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-brands fa-linkedin"></i>
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/dawood-tahir-3854a035a" target="_blank">Connect with me</a>
-        </div>
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-brands fa-github"></i>
-            <h3>GitHub</h3>
-            <a href="https://github.com/DawoodTahir505" target="_blank">View my repos</a>
-        </div>
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
-            <i class="fa-solid fa-file-arrow-down"></i>
-            <h3>Resume</h3>
-            <a href="resume.pdf" download>Download PDF</a>
-        </div>
-    </div>
-</section>
+            <article class="project-card">
+                <div class="project-visual">
+                    <img src="streamlit-ui.jpg" alt="Predictive Analytics Dashboard" class="project-img">
+                    <span class="project-badge">Machine Learning</span>
+                </div>
+                <div class="project-content">
+                    <h3>Predictive Analytics & Price Forecasting Engine</h3>
+                    <p class="project-description">
+                        Engineered a forecasting pipeline that cleans volatile market metrics and predicts value trajectories. Served natively via a custom <strong>Streamlit</strong> web application dashboard.
+                    </p>
+                    <div class="tags">
+                        <span>scikit-learn</span>
+                        <span>Pandas</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary-link"><i class="fas fa-external-link-alt"></i> Launch App</a>
+                        <a href="#" class="project-link secondary-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </article>
 
-<footer>
-    <p>&copy; 2026 Dawood Tahir. Built from scratch, one dataset at a time.</p>
-</footer>
+            <article class="project-card">
+                <div class="project-visual">
+                    <img src="fastapi-docs.jpg" alt="Model Deployment via API" class="project-img">
+                    <span class="project-badge">Model Deployment</span>
+                </div>
+                <div class="project-content">
+                    <h3>Enterprise ML Model API Endpoints</h3>
+                    <p class="project-description">
+                        Developed production-ready high-throughput data validation pipelines and served inference parameters utilizing asynchronous <strong>FastAPI</strong> containers.
+                    </p>
+                    <div class="tags">
+                        <span>FastAPI</span>
+                        <span>Docker</span>
+                        <span>Uvicorn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary-link"><i class="fas fa-terminal"></i> API Docs</a>
+                        <a href="#" class="project-link secondary-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </article>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-in-out'
-        });
-    });
-</script>
+        </div>
+    </section>
+
 </body>
 </html>
