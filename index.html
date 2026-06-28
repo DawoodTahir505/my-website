@@ -3,240 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood | Data Scientist Portfolio</title>
-    <!-- Tailwind CSS for modern utility styling -->
+    <title>Dawood | Data Scientist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0F19; color: #F3F4F6; }
-        .gradient-text { background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #1D4ED8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bento-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); transition: all 0.3s ease; }
-        .bento-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(59, 130, 246, 0.1); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(15, 23, 42, 0.06); backdrop-filter: blur(16px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .glass-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05); border-color: rgba(59, 130, 246, 0.3); }
+        .gradient-text { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glow-bg { background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%); }
     </style>
 </head>
-<body class="selection:bg-blue-500 selection:text-white overflow-x-hidden">
+<body class="selection:bg-blue-100 overflow-x-hidden glow-bg">
 
-    <!-- Premium Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-white/5 px-6 py-4 md:px-16 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold tracking-tight text-white">Dawood<span class="text-blue-500">.</span></a>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="#stack" class="hover:text-white transition">Tech Stack</a>
-            <a href="#projects" class="hover:text-white transition">Projects</a>
-            <a href="#experience" class="hover:text-white transition">Timeline</a>
+    <!-- Active Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-50/70 backdrop-blur-md border-b border-slate-200/50 px-6 py-4 md:px-16 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold tracking-tight text-slate-900">Dawood<span class="text-blue-600">.</span></a>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-500">
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+            <a href="#certificate" class="hover:text-blue-600 transition">Credentials</a>
         </div>
-        <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition shadow-lg shadow-blue-600/20">Contact Me</a>
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition shadow-md shadow-blue-600/10">Hire Me</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0,transparent_50%)]"></div>
-        
-        <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full text-xs font-semibold text-blue-400 tracking-wide uppercase mb-6">
-            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Available for AI & Data Roles
+    <!-- Clean Hero -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-xs font-bold text-blue-600 tracking-wide uppercase mb-6 animate-pulse">
+            Available for AI & Data Roles
         </div>
-        
-        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight max-w-4xl leading-tight mb-6">
-            Hi! I am <span class="gradient-text">Dawood</span> <br>
-            Predicting the Future with Data.
+        <h1 class="text-5xl md:text-8xl font-black tracking-tight text-slate-900 max-w-4xl leading-none mb-6">
+            Hi, I'm <span class="gradient-text">Dawood</span>
         </h1>
-        
-        <p class="text-gray-400 md:text-xl max-w-2xl font-light mb-10 leading-relaxed">
-            Aspiring Data Scientist and Machine Learning Engineer specializing in transforming complex datasets into predictive web applications and production-ready APIs.
+        <p class="text-slate-500 md:text-2xl max-w-2xl font-normal tracking-tight mb-10">
+            Data Scientist building high-performance ML apps and production-ready APIs.
         </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#projects" class="bg-white text-gray-950 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition shadow-xl">View My Work</a>
-            <a href="#contact" class="bento-card font-medium px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">Let's Talk <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        <div class="flex gap-4">
+            <a href="#projects" class="bg-slate-900 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-slate-800 transition shadow-lg shadow-slate-900/10">Explore Projects</a>
+            <a href="#contact" class="glass-card font-semibold px-8 py-4 rounded-2xl text-slate-800 flex items-center justify-center gap-2">Let's Connect <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
     </section>
 
-    <!-- Premium Bento Grid Section -->
+    <!-- Grid Layout Section -->
     <section id="about" class="py-24 px-6 md:px-16 max-w-7xl mx-auto">
-        <div class="mb-16">
-            <h2 class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-2">Snapshot</h2>
-            <p class="text-3xl font-bold">The Mind Behind The Models</p>
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Bento Box 1: Core Profile -->
-            <div class="bento-card p-8 rounded-3xl md:col-span-2 flex flex-col justify-between min-h-[260px]">
-                <i class="fa-solid fa-brain text-3xl text-blue-400"></i>
+            <div class="glass-card p-8 rounded-3xl md:col-span-2 flex flex-col justify-between min-h-[220px]">
+                <div class="text-blue-600 text-2xl"><i class="fa-solid fa-layer-group"></i></div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Data Science & ML Focus</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Building end-to-end data applications. From complex exploratory data analytics and visualization to constructing real-time predictive microservices using modern AI stacks.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Core Architecture Focus</h3>
+                    <p class="text-slate-500 text-sm font-medium">Cleaning data structures, optimizing model weights, and deploying ultra-fast model inference logic via microservice frameworks.</p>
                 </div>
             </div>
-
-            <!-- Bento Box 2: Quick Fact/Metric -->
-            <div class="bento-card p-8 rounded-3xl flex flex-col justify-between text-center items-center min-h-[260px]">
-                <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-xl font-bold">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
+            <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
+                <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-bolt"></i></div>
                 <div>
-                    <div class="text-4xl font-extrabold text-white mb-1">ML</div>
-                    <div class="text-xs uppercase tracking-wider text-gray-500 font-semibold">UniAthena Certified</div>
-                </div>
-                <p class="text-xs text-gray-400 font-medium">Verified Machine Learning Credentials</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack (Tailored for Data Science without OpenCV) -->
-    <section id="stack" class="py-20 bg-[#080B12]/60 border-y border-white/5 px-6 md:px-16">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-2">Toolkit</h2>
-                <p class="text-3xl font-bold">Data & AI Ecosystem</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                <div class="bento-card p-6 rounded-2xl text-center">
-                    <i class="fa-brands fa-python text-3xl text-amber-400 mb-3"></i>
-                    <p class="text-sm font-medium">Python</p>
-                </div>
-                <div class="bento-card p-6 rounded-2xl text-center">
-                    <i class="fa-solid fa-table text-3xl text-blue-400 mb-3"></i>
-                    <p class="text-sm font-medium">Pandas & NumPy</p>
-                </div>
-                <div class="bento-card p-6 rounded-2xl text-center">
-                    <i class="fa-solid fa-chart-line text-3xl text-indigo-400 mb-3"></i>
-                    <p class="text-sm font-medium">Scikit-Learn</p>
-                </div>
-                <div class="bento-card p-6 rounded-2xl text-center">
-                    <i class="fa-solid fa-bolt text-3xl text-emerald-400 mb-3"></i>
-                    <p class="text-sm font-medium">FastAPI</p>
-                </div>
-                <div class="bento-card p-6 rounded-2xl text-center">
-                    <i class="fa-solid fa-cubes text-3xl text-red-400 mb-3"></i>
-                    <p class="text-sm font-medium">Streamlit</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Portfolio Layout -->
-    <section id="projects" class="py-24 px-6 md:px-16 max-w-7xl mx-auto">
-        <div class="mb-16">
-            <h2 class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-2">Projects</h2>
-            <p class="text-3xl font-bold">Intelligent Applications</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="bento-card overflow-hidden rounded-3xl flex flex-col justify-between group">
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-blue-500/10 border border-blue-500/20 text-blue-400 p-3 rounded-2xl text-lg">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                        </div>
-                        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">FastAPI • ML</span>
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Tech Capabilities</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Python</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Pandas</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">NumPy</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Scikit-Learn</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">FastAPI</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Streamlit</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Heart Disease Prediction API</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">A production-ready prediction endpoint utilizing machine learning classifications to identify cardiovascular risks instantly via raw clinical attributes.</p>
-                </div>
-                <div class="px-8 pb-8 flex gap-4">
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">Scikit-Learn</span>
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">FastAPI</span>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="bento-card overflow-hidden rounded-3xl flex flex-col justify-between group">
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-purple-500/10 border border-purple-500/20 text-purple-400 p-3 rounded-2xl text-lg">
-                            <i class="fa-solid fa-laptop"></i>
-                        </div>
-                        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Regression • ML</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Laptop Resale Price Predictor</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">An end-to-end regression model trained on localized Pakistani laptop hardware configurations to accurately evaluate actual secondary market resale valuation.</p>
-                </div>
-                <div class="px-8 pb-8 flex gap-4">
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">Linear Regression</span>
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">Pandas</span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="bento-card overflow-hidden rounded-3xl flex flex-col justify-between group">
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-3 rounded-2xl text-lg">
-                            <i class="fa-solid fa-file-invoice-dollar"></i>
-                        </div>
-                        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">EDA • Analytics</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Loan Approval Analytics</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">In-depth Exploratory Data Analysis (EDA) focused on systematic structural identification of consumer risk patterns within structured financial loan files.</p>
-                </div>
-                <div class="px-8 pb-8 flex gap-4">
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">Seaborn</span>
-                    <span class="text-xs bg-white/5 border border-white/5 px-3 py-1.5 rounded-lg text-gray-300">Data Cleaning</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Experience Block -->
-    <section id="experience" class="py-24 bg-[#080B12]/60 border-t border-white/5 px-6 md:px-16">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold text-blue-500 tracking-widest uppercase mb-2">Journey</h2>
-                <p class="text-3xl font-bold">Milestones & Timeline</p>
+    <!-- Projects System -->
+    <section id="projects" class="py-12 px-6 md:px-16 max-w-7xl mx-auto">
+        <h2 class="text-2xl font-black text-slate-900 mb-8 tracking-tight">Featured Pipeline Builds</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <div class="text-rose-500 mb-4 text-xl"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Heart Prediction API</h3>
+                    <p class="text-slate-500 text-xs font-medium leading-relaxed">ML-backed predictive endpoint processing patient attributes over active endpoints via FastAPI architectures.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
+                    <span>FastAPI</span> • <span>Scikit-Learn</span>
+                </div>
             </div>
-
-            <div class="relative border-l border-white/10 pl-8 ml-4 space-y-12">
-                <!-- Timeline Element 1 -->
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-blue-500 border-4 border-[#0B0F19]"></div>
-                    <span class="text-xs text-blue-400 font-semibold tracking-wider">Present</span>
-                    <h3 class="text-xl font-bold mt-1">Advancing Machine Learning Architectures</h3>
-                    <p class="text-gray-400 text-sm mt-2">Designing clean inference pipelines, production engineering APIs via FastAPI, and testing analytical web applications using Streamlit dashboards.</p>
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <div class="text-violet-500 mb-4 text-xl"><i class="fa-solid fa-laptop"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Laptop Resale Estimator</h3>
+                    <p class="text-slate-500 text-xs font-medium leading-relaxed">End-to-end regression modeling targeting secondary market device specifications inside local Pakistani tech sectors.</p>
                 </div>
-                <!-- Timeline Element 2 -->
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-white/20 border-4 border-[#0B0F19]"></div>
-                    <span class="text-xs text-gray-500 font-semibold tracking-wider">Mid 2026</span>
-                    <h3 class="text-xl font-bold mt-1">UniAthena Certified</h3>
-                    <p class="text-gray-400 text-sm mt-2">Successfully fulfilled professional verified machine learning credentials, expanding structured comprehension across foundational model training methodologies.</p>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
+                    <span>Regression</span> • <span>Pandas</span>
                 </div>
-                <!-- Timeline Element 3 -->
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-white/20 border-4 border-[#0B0F19]"></div>
-                    <span class="text-xs text-gray-500 font-semibold tracking-wider">Late 2025</span>
-                    <h3 class="text-xl font-bold mt-1">Python Foundations Enrolled</h3>
-                    <p class="text-gray-400 text-sm mt-2">Immersed into core algorithmic logic and structured computational science foundations within Python Essentials coursework tracks.</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <div class="text-blue-500 mb-4 text-xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Loan Approval Engine</h3>
+                    <p class="text-slate-500 text-xs font-medium leading-relaxed">Structured Exploratory Data Analysis maps separating user credit applications from volatile consumer risk flags.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
+                    <span>EDA</span> • <span>Seaborn</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Connect / Call to Action Block (With All Active Social Profile Links) -->
+    <!-- Premium Certificate Verification Frame -->
+    <section id="certificate" class="py-24 px-6 md:px-16 max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight">Verified Verification Credentials</h2>
+            <p class="text-slate-400 text-xs font-semibold mt-1">UniAthena Machine Learning Competency Standard</p>
+        </div>
+        <div class="glass-card p-4 rounded-[2rem] overflow-hidden shadow-sm">
+            <!-- Replace 'YOUR_IMAGE_LINK_HERE' with your real verification image link asset -->
+            <img src="YOUR_IMAGE_LINK_HERE" alt="UniAthena Machine Learning Certificate" class="w-full h-auto rounded-2xl bg-slate-100 object-cover min-h-[300px]" onerror="this.src='https://placehold.co/800x500/f1f5f9/0f172a?text=UniAthena+ML+Certificate+Image+Placement';">
+        </div>
+    </section>
+
+    <!-- Connect Terminal Footer -->
     <section id="contact" class="py-24 px-6 md:px-16 max-w-4xl mx-auto text-center">
-        <div class="bento-card p-12 rounded-[2.5rem] relative overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.1)_0,transparent_60%)]"></div>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Let's build something intelligent.</h2>
-            <p class="text-gray-400 max-w-xl mx-auto mb-8 font-light">
-                Looking for analytical solutions, production pipelines, or have an interesting data challenge? Let's connect.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                <a href="mailto:dawoodtahiir@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition shadow-xl shadow-blue-600/10">Email Me Directly</a>
+        <div class="glass-card p-12 rounded-[2.5rem] relative overflow-hidden bg-white/80">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">Let's build pipelines.</h2>
+            <p class="text-slate-500 max-w-md mx-auto mb-8 text-sm font-medium">Looking for inference engineering, data optimization solutions, or clean analytics architectures? Hit me up below.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:dawoodtahiir@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl transition shadow-lg shadow-blue-600/20 text-sm">Send Email</a>
                 <div class="flex gap-2 justify-center">
-                    <a href="https://www.linkedin.com/in/dawood-3854a035a/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bento-card rounded-xl flex items-center justify-center text-xl hover:text-white transition text-gray-400" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/DawoodTahir505" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bento-card rounded-xl flex items-center justify-center text-xl hover:text-white transition text-gray-400" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://x.com/DawoodTahi53015" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bento-card rounded-xl flex items-center justify-center text-xl hover:text-white transition text-gray-400" title="X Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/dawood-3854a035a/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-blue-600" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/DawoodTahir505" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-slate-900" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://x.com/DawoodTahi53015" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-blue-400" title="X Profile"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-600 px-6">
-        <p>© 2026 Dawood. Built for Data Science & Predictive Analytics.</p>
+    <!-- Minimal Footer -->
+    <footer class="py-8 text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest px-6">
+        <p>© 2026 Dawood • Systems & Analytics.</p>
     </footer>
 
 </body>
