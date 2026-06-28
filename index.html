@@ -3,89 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood | Data Scientist</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dawood | Data Scientist Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Nav */
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #7dd3fc;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--card-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skills-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .project-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            background-color: rgba(15, 23, 42, 0.4);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .metric span {
+            color: var(--text-muted);
+        }
+
+        .metric strong {
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-footer {
+            padding: 0 25px 25px 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="container">
-            <span class="status-badge">Available for Roles</span>
-            <h1>Hi, I'm <span class="highlight">Dawood</span>.</h1>
-            <p class="subtitle">Data Scientist specializing in predictive modeling, exploratory analysis, and automated machine learning deployments.</p>
-            <div class="social-links">
-                <a href="#" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="#" download class="btn btn-primary"><i class="fas fa-file-download"></i> View CV</a>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">iamdawood.me</a>
+            <nav>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Hi, I'm <span>Dawood</span>.</h1>
+            <p>Aspiring Data Scientist & Machine Learning Engineer. I build predictive models, clean complex pipelines, and turn raw data into interactive insights.</p>
+            <div class="btn-group">
+                <a href="https://github.com/yourusername" target="_blank" class="btn btn-primary">View GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="skills-section container">
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="skills-grid">
-
-            <!-- PYTHON -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon isometric-3d">
+        <section id="skills">
+            <h2>Technical Toolbox</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3>Data Analysis & Engineering</h3>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Data Cleaning</span>
+                    </div>
                 </div>
-                <h3>Python</h3>
-            </div>
-
-            <!-- FASTAPI -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-icon isometric-3d">
+                <div class="skills-category">
+                    <h3>Machine Learning & CV</h3>
+                    <div class="tags">
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">MediaPipe</span>
+                    </div>
                 </div>
-                <h3>FastAPI</h3>
-            </div>
-
-            <!-- STREAMLIT -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" class="skill-icon isometric-3d">
+                <div class="skills-category">
+                    <h3>Deployment & UI</h3>
+                    <div class="tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
                 </div>
-                <h3>Streamlit</h3>
             </div>
+        </section>
 
-            <!-- DEEP LEARNING -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Deep Learning" class="skill-icon isometric-3d">
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">Heart Disease Prediction API</h3>
+                        <div class="project-metrics">
+                            <div class="metric"><span>Framework:</span> <strong>FastAPI</strong></div>
+                        </div>
+                        <p class="project-desc">Developed and deployed an end-to-end Machine Learning API backend that handles user clinical inputs to confidently predict the structural likelihood of cardiovascular health irregularities.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Scikit-Learn</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Live Demo →</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
                 </div>
-                <h3>Deep Learning</h3>
-            </div>
 
-            <!-- NLP -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-brain fa-3x fallback-icon"></i>
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">AI Air Canvas Application</h3>
+                        <div class="project-metrics">
+                            <div class="metric"><span>Domain:</span> <strong>Computer Vision</strong></div>
+                        </div>
+                        <p class="project-desc">Built a real-time drawing program utilizing advanced hand gesture tracking mechanics. It maps user movements seamlessly through a standard camera array onto a virtual workstation layout.</p>
+                        <div class="tags">
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">MediaPipe</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
                 </div>
-                <h3>NLP</h3>
-            </div>
 
-            <!-- NUMPY -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon isometric-3d">
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">Laptop Resale Price Predictor</h3>
+                        <div class="project-metrics">
+                            <div class="metric"><span>Algorithm:</span> <strong>Linear Regression</strong></div>
+                        </div>
+                        <p class="project-desc">Engineered a complete data processing pipeline scraping, cleaning, and evaluating targeted market valuations. Built out interactive dashboard configurations to help quickly calculate custom machine quotes.</p>
+                        <div class="tags">
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Scikit-Learn</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Live Demo →</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
                 </div>
-                <h3>NumPy</h3>
-            </div>
 
-            <!-- PANDAS -->
-            <div class="skill-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon isometric-3d">
+                <div class="project-card">
+                    <div class="project-body">
+                        <h3 class="project-title">Loan Approval Exploratory Data Analysis</h3>
+                        <div class="project-metrics">
+                            <div class="metric"><span>Focus:</span> <strong>EDA / Insights</strong></div>
+                        </div>
+                        <p class="project-desc">Conducted deep-dive statistical exploration over major financial underwriting datasets. Identified critical core attributes impacting systematic approvals using advanced statistical plots.</p>
+                        <div class="tags">
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">Seaborn</span>
+                            <span class="tag">EDA</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="project-link">View Notebook</a>
+                    </div>
                 </div>
-                <h3>Pandas</h3>
-            </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Milestones & Credentials</h2>
+            <div class="skills-grid">
+                <div class="skills-category" style="border-left: 4px solid var(--accent-color);">
+                    <h3 style="color: var(--text-main); margin-bottom: 5px;">Machine Learning Verified Certificate</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Issued by UniAthena</p>
+                    <a href="#" class="project-link" style="font-size: 0.85rem;">Verify Credential ↗</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
 </body>
 </html>
