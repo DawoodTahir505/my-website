@@ -1,146 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood | Data Scientist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dawood</title>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
-        .glass-card { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(15, 23, 42, 0.06); backdrop-filter: blur(16px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .glass-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05); border-color: rgba(59, 130, 246, 0.3); }
-        .gradient-text { background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glow-bg { background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            margin-top: 40px;
+        }
+
+        .contact p {
+            font-size: 15px;
+            opacity: 0.8;
+        }
     </style>
 </head>
-<body class="selection:bg-blue-100 overflow-x-hidden glow-bg">
+<body>
+    <div class="container">
+        <h1>Dawood</h1>
 
-    <!-- Active Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-50/70 backdrop-blur-md border-b border-slate-200/50 px-6 py-4 md:px-16 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold tracking-tight text-slate-900">Dawood<span class="text-blue-600">.</span></a>
-        <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-500">
-            <a href="#about" class="hover:text-blue-600 transition">About</a>
-            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-            <a href="#certificate" class="hover:text-blue-600 transition">Credentials</a>
-        </div>
-        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition shadow-md shadow-blue-600/10">Hire Me</a>
-    </nav>
+        <p>I'm passionate about advancing AI and machine learning. Currently exploring deep learning, NLP, and practical applications of AI in real-world problems.</p>
 
-    <!-- Clean Hero -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative">
-        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-xs font-bold text-blue-600 tracking-wide uppercase mb-6 animate-pulse">
-            Available for AI & Data Roles
-        </div>
-        <h1 class="text-5xl md:text-8xl font-black tracking-tight text-slate-900 max-w-4xl leading-none mb-6">
-            Hi, I'm <span class="gradient-text">Dawood</span>
-        </h1>
-        <p class="text-slate-500 md:text-2xl max-w-2xl font-normal tracking-tight mb-10">
-            Data Scientist building high-performance ML apps and production-ready APIs.
-        </p>
-        <div class="flex gap-4">
-            <a href="#projects" class="bg-slate-900 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-slate-800 transition shadow-lg shadow-slate-900/10">Explore Projects</a>
-            <a href="#contact" class="glass-card font-semibold px-8 py-4 rounded-2xl text-slate-800 flex items-center justify-center gap-2">Let's Connect <i class="fa-solid fa-arrow-right text-xs"></i></a>
-        </div>
-    </section>
+        <p>I work with data science, building predictive models and analyzing complex datasets. I've explored <a href="#">machine learning projects</a>, data engineering, and recently diving deeper into large language models and generative AI.</p>
 
-    <!-- Grid Layout Section -->
-    <section id="about" class="py-24 px-6 md:px-16 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-8 rounded-3xl md:col-span-2 flex flex-col justify-between min-h-[220px]">
-                <div class="text-blue-600 text-2xl"><i class="fa-solid fa-layer-group"></i></div>
-                <div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-1">Core Architecture Focus</h3>
-                    <p class="text-slate-500 text-sm font-medium">Cleaning data structures, optimizing model weights, and deploying ultra-fast model inference logic via microservice frameworks.</p>
-                </div>
-            </div>
-            <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
-                <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-bolt"></i></div>
-                <div>
-                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Tech Capabilities</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Python</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Pandas</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">NumPy</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Scikit-Learn</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">FastAPI</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-lg font-semibold">Streamlit</span>
-                    </div>
-                </div>
-            </div>
+        <div class="contact">
+            <p>Connect with me on <a href="https://github.com/DawoodTahir505">github</a>, <a href="https://www.linkedin.com/in/dawood-3854a035a">linkedin</a>, or at dawoodtahiir at gmail dot com!</p>
         </div>
-    </section>
-
-    <!-- Projects System -->
-    <section id="projects" class="py-12 px-6 md:px-16 max-w-7xl mx-auto">
-        <h2 class="text-2xl font-black text-slate-900 mb-8 tracking-tight">Featured Pipeline Builds</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
-                <div>
-                    <div class="text-rose-500 mb-4 text-xl"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Heart Prediction API</h3>
-                    <p class="text-slate-500 text-xs font-medium leading-relaxed">ML-backed predictive endpoint processing patient attributes over active endpoints via FastAPI architectures.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
-                    <span>FastAPI</span> • <span>Scikit-Learn</span>
-                </div>
-            </div>
-            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
-                <div>
-                    <div class="text-violet-500 mb-4 text-xl"><i class="fa-solid fa-laptop"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Laptop Resale Estimator</h3>
-                    <p class="text-slate-500 text-xs font-medium leading-relaxed">End-to-end regression modeling targeting secondary market device specifications inside local Pakistani tech sectors.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
-                    <span>Regression</span> • <span>Pandas</span>
-                </div>
-            </div>
-            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
-                <div>
-                    <div class="text-blue-500 mb-4 text-xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Loan Approval Engine</h3>
-                    <p class="text-slate-500 text-xs font-medium leading-relaxed">Structured Exploratory Data Analysis maps separating user credit applications from volatile consumer risk flags.</p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 flex gap-2 text-[10px] uppercase font-bold text-slate-400">
-                    <span>EDA</span> • <span>Seaborn</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Certificate Verification Frame -->
-    <section id="certificate" class="py-24 px-6 md:px-16 max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl font-black text-slate-900 tracking-tight">Verified Verification Credentials</h2>
-            <p class="text-slate-400 text-xs font-semibold mt-1">UniAthena Machine Learning Competency Standard</p>
-        </div>
-        <div class="glass-card p-4 rounded-[2rem] overflow-hidden shadow-sm">
-            <!-- Replace 'YOUR_IMAGE_LINK_HERE' with your real verification image link asset -->
-            <img src="YOUR_IMAGE_LINK_HERE" alt="UniAthena Machine Learning Certificate" class="w-full h-auto rounded-2xl bg-slate-100 object-cover min-h-[300px]" onerror="this.src='https://placehold.co/800x500/f1f5f9/0f172a?text=UniAthena+ML+Certificate+Image+Placement';">
-        </div>
-    </section>
-
-    <!-- Connect Terminal Footer -->
-    <section id="contact" class="py-24 px-6 md:px-16 max-w-4xl mx-auto text-center">
-        <div class="glass-card p-12 rounded-[2.5rem] relative overflow-hidden bg-white/80">
-            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">Let's build pipelines.</h2>
-            <p class="text-slate-500 max-w-md mx-auto mb-8 text-sm font-medium">Looking for inference engineering, data optimization solutions, or clean analytics architectures? Hit me up below.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="mailto:dawoodtahiir@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl transition shadow-lg shadow-blue-600/20 text-sm">Send Email</a>
-                <div class="flex gap-2 justify-center">
-                    <a href="https://www.linkedin.com/in/dawood-3854a035a/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-blue-600" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/DawoodTahir505" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-slate-900" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://x.com/DawoodTahi53015" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card bg-white rounded-2xl flex items-center justify-center text-xl text-slate-600 hover:text-blue-400" title="X Profile"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Minimal Footer -->
-    <footer class="py-8 text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest px-6">
-        <p>© 2026 Dawood • Systems & Analytics.</p>
-    </footer>
-
+    </div>
 </body>
 </html>
