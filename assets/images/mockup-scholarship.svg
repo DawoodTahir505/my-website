@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" fill="none">
+  <rect width="800" height="480" fill="#0b0e14" rx="16"/>
+  <rect x="1" y="1" width="798" height="478" rx="15" stroke="#1e2533" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#111622" rx="16"/>
+  <rect x="0" y="30" width="800" height="12" fill="#111622"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#1e2533" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12">scholarship-rag // hec-ehsaas-vector-store</text>
+
+  <!-- Left: Vector Query Pipeline -->
+  <rect x="25" y="60" width="340" height="395" rx="10" fill="#0e131d" stroke="#1b2230" stroke-width="1"/>
+  <text x="45" y="95" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="12">QUERY > "Undergrad HEC Need-Based Criteria"</text>
+
+  <!-- Query expansion card -->
+  <rect x="45" y="115" width="300" height="75" rx="6" fill="#131c2b" stroke="#1f2c42" stroke-width="1"/>
+  <text x="60" y="140" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">EMBEDDING MODEL</text>
+  <text x="60" y="160" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">text-embedding-3-small (1536 dims)</text>
+  <text x="60" y="178" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Cosine Similarity Threshold: 0.82</text>
+
+  <!-- Top 3 retrieved chunks -->
+  <text x="45" y="215" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700">RETRIEVED CITATION CHUNKS</text>
+  
+  <rect x="45" y="230" width="300" height="58" rx="6" fill="#111824" stroke="#1e2736" stroke-width="1"/>
+  <text x="58" y="252" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">[HEC_Policy_2024.pdf #P4]</text>
+  <text x="58" y="272" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Family income limit &lt; PKR 45,000 / month</text>
+
+  <rect x="45" y="298" width="300" height="58" rx="6" fill="#111824" stroke="#1e2736" stroke-width="1"/>
+  <text x="58" y="320" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">[Ehsaas_Criteria_Doc.pdf #P12]</text>
+  <text x="58" y="340" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Minimum 60% intermediate marks required</text>
+
+  <rect x="45" y="366" width="300" height="58" rx="6" fill="#111824" stroke="#1e2736" stroke-width="1"/>
+  <text x="58" y="388" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">[Deadlines_Gazette.pdf #P2]</text>
+  <text x="58" y="408" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Fall cycle closing date: November 15</text>
+
+  <!-- Right: Grounded Synthesis without Hallucination -->
+  <rect x="385" y="60" width="390" height="395" rx="10" fill="#0e131d" stroke="#1b2230" stroke-width="1"/>
+  <rect x="405" y="80" width="120" height="22" rx="4" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1"/>
+  <text x="415" y="95" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="10">✓ 100% GROUNDED</text>
+  
+  <text x="405" y="130" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700">HEC Need-Based Scholarship Eligibility</text>
+  
+  <rect x="405" y="148" width="350" height="180" rx="8" fill="#131a26" stroke="#1e2636" stroke-width="1"/>
+  <text x="420" y="176" fill="#cbd5e1" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Based on the official HEC Policy Manual 2024:</text>
+  <text x="420" y="204" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">• Must be enrolled in a recognized public university</text>
+  <text x="420" y="228" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">• Monthly household income must not exceed PKR 45,000</text>
+  <text x="420" y="252" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">• Covers 100% tuition fee + monthly stipend allowance</text>
+  <text x="420" y="280" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">• Verified against 3 official government gazettes</text>
+  <text x="420" y="308" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">Provenance verified · 0 Hallucinations Detected</text>
+
+  <rect x="405" y="345" width="350" height="85" rx="8" fill="#0a1017" stroke="#1b2330" stroke-width="1"/>
+  <text x="420" y="375" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">Stack: LangChain + ChromaDB + Python + Streamlit</text>
+  <text x="420" y="402" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="11">Solved: Fragmented portal info for Pakistani students</text>
+</svg>

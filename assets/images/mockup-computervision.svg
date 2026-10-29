@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" fill="none">
+  <rect width="800" height="480" fill="#0b0e14" rx="16"/>
+  <rect x="1" y="1" width="798" height="478" rx="15" stroke="#1e2533" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#111622" rx="16"/>
+  <rect x="0" y="30" width="800" height="12" fill="#111622"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#1e2533" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12">vision-ai // brain-mri-tumor-yolo-detection.py</text>
+
+  <!-- Left: Medical MRI Scan Simulator with YOLO Bounding Box -->
+  <rect x="25" y="60" width="370" height="395" rx="10" fill="#06080d" stroke="#1c2333" stroke-width="1"/>
+  <!-- Simulated MRI Brain Contour -->
+  <ellipse cx="210" cy="245" rx="130" ry="155" fill="#131722"/>
+  <ellipse cx="210" cy="245" rx="105" ry="125" fill="#1a202e"/>
+  <!-- Brain folds and cerebral cortex contours -->
+  <path d="M 140 230 Q 180 180 210 240 Q 240 180 280 230" stroke="#334155" stroke-width="3" fill="none"/>
+  <path d="M 150 280 Q 185 240 210 300 Q 245 250 270 290" stroke="#334155" stroke-width="3" fill="none"/>
+  <path d="M 210 130 L 210 360" stroke="#232d3f" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Detected Tumor Region Highlight -->
+  <ellipse cx="245" cy="215" rx="35" ry="30" fill="#ef4444" fill-opacity="0.25"/>
+  <!-- YOLO Bounding Box with Label -->
+  <rect x="200" y="175" width="90" height="80" rx="3" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <rect x="200" y="157" width="90" height="18" fill="#ef4444"/>
+  <text x="205" y="170" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">Glioma 96.4%</text>
+
+  <!-- Reticle Crosshairs -->
+  <circle cx="245" cy="215" r="4" fill="#ef4444"/>
+  <line x1="230" y1="215" x2="260" y2="215" stroke="#ef4444" stroke-width="1"/>
+  <line x1="245" y1="200" x2="245" y2="230" stroke="#ef4444" stroke-width="1"/>
+
+  <!-- Right: Metrics & Architecture Evaluation -->
+  <rect x="415" y="60" width="360" height="395" rx="10" fill="#0e131d" stroke="#1b2230" stroke-width="1"/>
+  <text x="435" y="92" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">MODEL EVALUATION BENCHMARKS</text>
+
+  <!-- Metric Badges -->
+  <g>
+    <rect x="435" y="110" width="155" height="70" rx="8" fill="#131b28" stroke="#1f2c42" stroke-width="1"/>
+    <text x="450" y="135" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Validation Accuracy</text>
+    <text x="450" y="165" fill="#10b981" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800">96.8%</text>
+
+    <rect x="605" y="110" width="155" height="70" rx="8" fill="#131b28" stroke="#1f2c42" stroke-width="1"/>
+    <text x="620" y="135" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Inference Latency</text>
+    <text x="620" y="165" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800">18ms</text>
+  </g>
+
+  <!-- Confusion Matrix & Architecture Summary -->
+  <rect x="435" y="195" width="325" height="150" rx="8" fill="#111722" stroke="#1e2736" stroke-width="1"/>
+  <text x="450" y="222" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">Architectural Pipeline:</text>
+  <text x="450" y="246" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">1. CLAHE Contrast Histogram Equalization</text>
+  <text x="450" y="270" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">2. Custom CNN &amp; YOLOv8 Detection Backbone</text>
+  <text x="450" y="294" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">3. Sensitivity / Specificity Precision Optimization</text>
+  <text x="450" y="322" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">PyTorch · OpenCV · Streamlit Diagnostic UI</text>
+
+  <rect x="435" y="360" width="325" height="75" rx="8" fill="#090d14" stroke="#1a2230" stroke-width="1"/>
+  <text x="450" y="388" fill="#cbd5e1" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Also applied to Skin Acne Classification</text>
+  <text x="450" y="414" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Lesion localization with bounding-box heatmaps</text>
+</svg>

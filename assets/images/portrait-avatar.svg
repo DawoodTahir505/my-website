@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="500" height="600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="500" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#090b10" />
+    </linearGradient>
+    <linearGradient id="skin" x1="200" y1="180" x2="300" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8bf96" />
+      <stop offset="100%" stop-color="#cf9f74" />
+    </linearGradient>
+    <linearGradient id="hair" x1="180" y1="110" x2="320" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1d24" />
+      <stop offset="100%" stop-color="#0d0f14" />
+    </linearGradient>
+    <linearGradient id="jacket" x1="150" y1="360" x2="350" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e2433" />
+      <stop offset="100%" stop-color="#11151f" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="500" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="500" height="600" fill="url(#bg)" rx="24"/>
+  <rect x="1" y="1" width="498" height="598" rx="23" stroke="#262f45" stroke-width="1.5"/>
+
+  <!-- Subtle Studio Lighting Grid -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="600" />
+    <line x1="150" y1="0" x2="150" y2="600" />
+    <line x1="250" y1="0" x2="250" y2="600" />
+    <line x1="350" y1="0" x2="350" y2="600" />
+    <line x1="450" y1="0" x2="450" y2="600" />
+    <line x1="0" y1="100" x2="500" y2="100" />
+    <line x1="0" y1="200" x2="500" y2="200" />
+    <line x1="0" y1="300" x2="500" y2="300" />
+    <line x1="0" y1="400" x2="500" y2="400" />
+    <line x1="0" y1="500" x2="500" y2="500" />
+  </g>
+
+  <!-- Minimalist Portrait Silhouette -->
+  <!-- Shoulders & Coat -->
+  <path d="M 80 600 C 90 460 140 380 200 370 L 250 420 L 300 370 C 360 380 410 460 420 600 Z" fill="url(#jacket)" filter="url(#softShadow)"/>
+  <path d="M 215 380 L 250 440 L 285 380 L 270 600 L 230 600 Z" fill="#0c0e14"/>
+  <!-- Shirt collar -->
+  <polygon points="230,370 250,405 240,360" fill="#f8fafc" opacity="0.9"/>
+  <polygon points="270,370 250,405 260,360" fill="#e2e8f0" opacity="0.9"/>
+
+  <!-- Neck -->
+  <rect x="225" y="290" width="50" height="90" rx="10" fill="#cf9f74"/>
+
+  <!-- Head Base -->
+  <ellipse cx="250" cy="235" rx="65" ry="82" fill="url(#skin)" filter="url(#softShadow)"/>
+
+  <!-- Hair Cut -->
+  <path d="M 185 220 C 180 150 210 120 250 120 C 290 120 320 150 315 220 C 310 190 295 160 250 160 C 205 160 190 190 185 220 Z" fill="url(#hair)"/>
+  <path d="M 183 220 C 182 245 186 265 190 270 C 187 250 187 235 187 220 Z" fill="url(#hair)"/>
+  <path d="M 317 220 C 318 245 314 265 310 270 C 313 250 313 235 313 220 Z" fill="url(#hair)"/>
+
+  <!-- Ears -->
+  <ellipse cx="184" cy="240" rx="9" ry="16" fill="#cf9f74"/>
+  <ellipse cx="316" cy="240" rx="9" ry="16" fill="#cf9f74"/>
+
+  <!-- Eyebrows & Eyes Minimalist -->
+  <path d="M 212 215 Q 225 210 238 215" stroke="#1f242e" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 262 215 Q 275 210 288 215" stroke="#1f242e" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="225" cy="228" r="4.5" fill="#1f242e"/>
+  <circle cx="275" cy="228" r="4.5" fill="#1f242e"/>
+  <circle cx="226.5" cy="226.5" r="1.5" fill="#ffffff"/>
+  <circle cx="276.5" cy="226.5" r="1.5" fill="#ffffff"/>
+
+  <!-- Nose -->
+  <path d="M 250 226 L 246 254 L 254 254" stroke="#b08159" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Mouth -->
+  <path d="M 238 274 Q 250 280 262 274" stroke="#9e6e49" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Glasses / Minimalist Spec Frames -->
+  <rect x="204" y="216" width="38" height="25" rx="6" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.85"/>
+  <rect x="258" y="216" width="38" height="25" rx="6" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.85"/>
+  <line x1="242" y1="226" x2="258" y2="226" stroke="#38bdf8" stroke-width="2" opacity="0.85"/>
+
+  <!-- Bottom Badge Label -->
+  <rect x="35" y="525" width="430" height="48" rx="12" fill="#0e121a" stroke="#252c3d" stroke-width="1.2"/>
+  <circle cx="58" cy="549" r="4" fill="#10b981"/>
+  <text x="74" y="553" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Dawood Tahir</text>
+  <text x="445" y="553" text-anchor="end" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">Data Science · AI</text>
+</svg>
